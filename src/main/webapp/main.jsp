@@ -61,12 +61,12 @@ $(document).ready(function(){
 	<img src="./images/menu_icon.png" id="m" alt="메뉴줄이기" width="30" height="30">
 </p>
 	<p align="right" id="upp">
-		<a href="sessionLoginForm.jsp">
-		<img alt="logo" src="./images/procutcut.png"  height="35px" width="35px"></a>&nbsp;&nbsp;GUEST&nbsp;&nbsp;
+		<a href="sessionLogin.jsp">
+		<img alt="logo" src="./images/procutcut.png"  height="35px" width="35px"></a>&nbsp;&nbsp;로그인&nbsp;&nbsp;
 	</p>
 	<p align="right" id="upp">
 		<a href="join.jsp">
-		<img alt="logo" src="./images/procutcut.png"  height="35px" width="35px"></a>&nbsp;&nbsp;GUEST&nbsp;&nbsp;
+		<img alt="logo" src="./images/procutcut.png"  height="35px" width="35px"></a>&nbsp;&nbsp;회원가입&nbsp;&nbsp;
 	</p>
 
 	<div class="wrap">
