@@ -4,21 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메인 하단</title>
-<style>
-font { size = 8px;}</style>
+<title>footer.jsp</title>
 </head>
 <body>
-<div>
-	<div align="center">
-		<div>
-		(주)1'M MOVIE&nbsp;&nbsp;제작자 :김00<br>
-		주소 : 서울시 관악구 신림동 340<br>
-		사업자 등록번호 : 123-45-67890&nbsp;&nbsp;대표전화 : 02-0000-0000<br>
-		이메일 : AAA@naver.com<br>
-		</div>
-	</div>
-</div>
-	
+<table width="1000" align="center">
+	<tr height="100" >
+		<td align="center" width="250">
+		(주) 이젠캠핑&nbsp;&nbsp;대표 : 김희석<br>
+		주소 : 서울 관악구 신림동 340 르네상스쇼핑몰 6층<br>
+		사업자 등록번호 : 123-45-67890&nbsp;&nbsp;대표전화 : 02-2088-5678<br>
+		이메일 : webmaster@ezen.co.kr<br>
+		Copyright 이젠캠핑 쇼핑몰 All rights reserved.<br>
+</table>
 </body>
 </html>

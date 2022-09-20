@@ -4,84 +4,48 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메인페이지 헤더</title>
+<title>header.jsp</title>
 <style>
-$('#box1').css({
- width: 1000;
- bordercolor: darkgray;
- float: left;
-});
-$('#box2').css({
-	display: inline-block;
-	text-align: center;
-	float: left;
-});
-$('div.a').css({
- display: inline-block;
-}
-$('div.b').css({
- display: inline-block;
-}
-$('div.c').css({
- display: inline-block;
-}
+	table, tr, td {
+		border: none;
+		fontSize: "35px";
+		display:"table";
+		
+	}
+	
+	tr {
+		 
+		 border: none;
+	}
+	
+	td {
+		 border: none;
+	 }
+	logo {
+		display: table-cell;
+		vertical-align: middle;
+	}
 </style>
 </head>
 <body>
+	<!-- session을 이용한 로그인 처리 -->
 	<%
-	String id = (String) session.getAttribute("id");
+	String id = (String)session.getAttribute("id");
 
-	if (id == null) {
+	if(id == null){
 		id = "GUEST";
 	}
-	%>
+%>
 
-	<div id="box1">
-		<div height="80">
-			<div style="float: left; width: 33%;">
-				<jsp:include page="menu.jsp"></jsp:include>
-			</div>
-			
-			<div style="float: left; width: 33%;">
-				<font size="20"><img src="./images/movie.png" alt="1'M MOVIE" width="200" height="100"/></font>
-			</div>
-			
-			<div style="float: left; width: 33%;">
-				<%=id%>님 반갑습니다.
-				<% if (id.equals("GUEST")) { %>
-				<br>
-				<button onclick="location.href='#'">로그인</button>
-				<% } else { %>
-				<button onclick="location.href='#'">로그아웃</button>
-				<% } %>
-			</div>
-			
-
-		</div>
-		<br>
-<br>
-		<div id="box2" >
-			<span class="box1"> <font size="5"> <a
-					href="#"
-					style="text-decoration: none; margin-right: 40px; margin-left: 200px;">액션</a></font>
-			</span> <span class="box1"> <font size="5" color="white"> <a
-					href="#"
-					style="text-decoration: none; margin-right: 40px; margin-left: 40px;">드라마</a></font>
-			</span> <span class="box2"> <font size="5" color="white"> <a
-					href="#"
-					style="text-decoration: none; margin-right: 40px; margin-left: 40px;">멜로</a></font>
-			</span> <span class="box3"> <font size="5" color="white"> <a
-					href="#"
-					style="text-decoration: none; margin-right: 40px; margin-left: 40px;">가족</a></font>
-			</span> <span class="box4"> <font size="5" color="white"> <a
-					href="#"
-					style="text-decoration: none; margin-right: 40px; margin-left: 40px;">공포</a></font>
-			</span>
-		</div>
-
-	</div>
-	<br>
-	<br>
-
+	<table width="1000">
+		<tr height="80">
+			<td class="logo">
+				<img alt="movie" src="./images/movie.png" height="60"> 
+				<font size="6">movie time</font></td>
+			<td align="center" width="200">
+				<img alt="profile" src="./images/procutcut.png" height="50px" width="50px"><%=id %>
+				<button onclick="location.href='mainSession.jsp?center=sessionloginform.jsp'">로그아웃</button>
+			</td>
+	</table>
 </body>
 </html>
