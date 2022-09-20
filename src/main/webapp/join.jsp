@@ -54,7 +54,7 @@ body {
 }
 
 form {
-	height: 930px;
+	height: 980px;
 	width: 400px;
 	background-color: rgba(255, 255, 255, 0.13);
 	position: absolute;
@@ -144,6 +144,21 @@ button {
 .social i {
 	margin-right: 4px;
 }
+
+input[type="checkbox"]{
+
+width: 15px; /*Desired width*/
+
+height: 15px; /*Desired height*/
+
+cursor: pointer;
+
+}
+label{ display:inline-block; width:100px; line-height:50px; }
+*{margin:0;padding:0;font-size:12px;font-family:'돋움',dotum}
+label{vertical-align:-1px}
+.comic{width:13px;height:13px;vertical-align:text-top}
+
 </style>
 </head>
 <body>
@@ -159,8 +174,16 @@ button {
 		<label for="name">이름</label> <input type="text" name="name">
 		<label for="gender">성별</label> <input type="text" name="gender">
 		<label for="age">나이</label> <input type="text" name="age">
-		<label for="genre">선호 장르</label> <input type="text"  name="genre">
+		<label for="genre">선호 장르</label> 
+		<div> <!-- style="border: 1px solid white; padding: 5px" -->
+	    <label style="display:inline-block;width:100px; line-height:50px;" for="comic"><input type="checkbox" id="comic" name="comic" value="comic">코믹</label>    
+	    <label style="display:inline-block;width:100px; line-height:50px;" for="mellow"><input type="checkbox" id="mellow" name="mellow" value="mellow">멜로</label> 
+	    <label style="display:inline-block;width:100px; line-height:50px;" for="action"><input type="checkbox" id="action" name="action" value="">액션</label><br>
+		<label style="display:inline-block;width:100px; line-height:50px;" for="a"><input type="checkbox" id="a" name="a" value="comic">코믹</label>    
+	    <label style="display:inline-block;width:100px; line-height:50px;" for="b"><input type="checkbox" id="b" name="b" value="mellow">멜로</label> 
+	    <label style="display:inline-block;width:100px; line-height:50px;" for="c"><input type="checkbox" id="c" name="c" value="">액션</label>
 
+	    </div>
 		<button>가입</button>
 	</form>	
 </body>

@@ -147,21 +147,33 @@ button {
 </style>
 </head>
 <body>
-	<div class="background">
-		<div class="shape"></div>
-		<div class="shape"></div>
-	</div>
-	<form height="1200px">
-		<h3>Join us!</h3>
+<%
+	request.setCharacterEncoding("UTF-8");
 
-		<label for="username">아이디</label> <input type="text" placeholder="id" name="id"> 
-		<label for="password">비밀번호</label> <input type="password" placeholder="Password" name="pw">
-		<label for="name">이름</label> <input type="text" name="name">
-		<label for="gender">성별</label> <input type="text" name="gender">
-		<label for="age">나이</label> <input type="text" name="age">
-		<label for="genre">선호 장르</label> <input type="text"  name="genre">
+	String hobby[] = request.getParameterValues("hobby");
+	String texthobby  = "";
+	
+	for(int i=0; i < hobby.length; i++){
+		texthobby += hobby[i] + " ";
+	}
+	
+%>
+	<jsp:useBean id="pBean" class="semiProject.PeopleBean">
+		<jsp:setProperty name="pBean" property="*"/>
+	</jsp:useBean>
 
-		<button>가입</button>
-	</form>	
+<%	
+	pBean.setHobby(texthobby);
+
+	//데이터베이스 클래스에 대한 객체 생성
+	PeopleDAO mdao = new PeopleDAO();
+	mdao.insertmember(pBean);
+
+	//회원정보 목록으로 이동
+	response.sendRedirect("memberList.jsp");
+	
+
+	
+%>	
 </body>
 </html>
