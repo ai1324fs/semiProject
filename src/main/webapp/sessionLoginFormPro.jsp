@@ -4,25 +4,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>LoginForm process</title>
+<title>session login process</title>
 </head>
 <body>
 <%
 	request.setCharacterEncoding("UTF-8");
 
 	String id = request.getParameter("id");
-	String passwd = request.getParameter("passwd");
-	//session영역에 id를 저장
-	session.setAttribute("id", id);
+	String pw = request.getParameter("pw");
 	
-	session.setAttribute("passwd", passwd);
+	session.setAttribute("id", id);
+	session.setAttribute("pw", pw);
 	
 	session.setMaxInactiveInterval(60*60*24*365);
 	
 	response.sendRedirect("main.jsp");
 
 %>
-
-
 </body>
 </html>

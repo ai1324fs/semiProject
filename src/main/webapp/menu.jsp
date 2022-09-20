@@ -1,57 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>메인 메뉴</title>
-<style>
-details { margin:5px 0 10px; }
-
-details > summary { 
-background:#444; 
-color:#fff; 
-padding:10px; 
-outline:0; 
-border-radius:5px; 
-cursor:pointer; 
-transition:background 0.5s; 
-text-align:left; 
-box-shadow: 1px 1px 2px gray;
-}
-
-details > summary::-webkit-details-marker { 
-background:#444; 
-color:#fff; 
-background-size:contain; 
-transform:rotate3d(0, 0, 1, 90deg); 
-transition:transform 0.25s;
-}
-
-
-element.style {
-    width: 150px;
-    height: 40px;
-}
-details[open] > summary::-webkit-details-marker { transform:rotate3d(0, 0, 1, 180deg);}
-details[open] > summary { background:#444;}
-details[open] > summary ~ * { animation:reveal 0.5s;}
-.tpt { background:#444; color:#fff; margin:5px 0 10px; padding:5px 10px; line-height:25px; border-radius:5px; box-shadow: 1px 1px 2px gray;}
-
-@keyframes reveal {
-    from { opacity:0; transform:translate3d(0, -30px, 0); }
-    to { opacity:1; transform:translate3d(0, 0, 0); }
-}
+<style type="text/css">
+    @import url("css/sidebar.css");
 </style>
+<meta charset="UTF-8">
+<title>menu.jsp</title>
 </head>
 <body>
-<details style="width: 150px; height: 40px;">
-    <summary>Menu</summary>
-    <div class="tpt">여름 선정 영화</div>
-    <div class="tpt">Best 추천 영화</div>
-    <div class="tpt">LIKE[찜]</div>
-    <div class="tpt">요청 게시판</div>
-    
-</details>
+	<header class="header" role="banner" id="menu">
+		<h1 class="logo">
+			<a href="#">1'm <span>movie</span></a><br>
+		</h1>
+		<div class="nav-wrap">
+			<nav class="main-nav" role="navigation">
+				<ul class="unstyled list-hover-slide">
+					<li><a href="#">추천</a></li>
+					<li><a href="#">장르별</a></li>
+					<li><a href="#">찜목록</a></li>
+					<li><a href="#">고객센터</a></li>
+				</ul>
+			</nav>
+			<div class="overlay"></div>
+			<ul class="social-links list-inline unstyled list-hover-slide">
+				<li><a href="#">Twitter</a></li>
+				<li><a href="#">Google+</a></li>
+				<li><a href="#">GitHub</a></li>
+				<li><a href="#">CodePen</a></li>
+			</ul>
+		</div>
+	</header>
 </body>
 </html>

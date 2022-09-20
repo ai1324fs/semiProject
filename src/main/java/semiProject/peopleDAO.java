@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import semiProject.PeopleBean;
 
 
 public class peopleDAO {
@@ -31,6 +33,32 @@ public class peopleDAO {
 		return conn;
 
 	}
+	
+	
+	public static void insertpeople(PeopleBean pBean) {
+
+		try {
+			getconnection();
+			String sql = "insert into camping_member values(?,?,?,?,?,?,?,?,?)";
+
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, pBean.getId()); 
+			pstmt.setString(2, pBean.getPasswd());
+			pstmt.setString(3, pBean.getName());
+			pstmt.setString(4, pBean.getGender());
+			pstmt.setInt(5, pBean.getAge());
+			pstmt.setString(6, pBean.getGenre()); 
+			
+			
+			
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 	//id에 해당하는 비밀번호를 찾아서 반환하는 메소드 호출 	
 public String getPassword(String id){
 		

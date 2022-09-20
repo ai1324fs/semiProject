@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>sessionLoginForm</title>
+<title>joinForm</title>
 
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="stylesheet"
@@ -54,7 +54,7 @@ body {
 }
 
 form {
-	height: 520px;
+	height: 930px;
 	width: 400px;
 	background-color: rgba(255, 255, 255, 0.13);
 	position: absolute;
@@ -151,21 +151,17 @@ button {
 		<div class="shape"></div>
 		<div class="shape"></div>
 	</div>
-	<form>
-		<h3>로그인</h3>
+	<form height="1200px">
+		<h3>Join us!</h3>
 
 		<label for="username">아이디</label> <input type="text" placeholder="id" name="id"> 
-		<label for="password">패스워드</label> <input type="password" placeholder="Password" name="pw">
+		<label for="password">비밀번호</label> <input type="password" placeholder="Password" name="pw">
+		<label for="name">이름</label> <input type="text" name="name">
+		<label for="gender">성별</label> <input type="text" name="gender">
+		<label for="age">나이</label> <input type="text" name="age">
+		<label for="genre">선호 장르</label> <input type="text"  name="genre">
 
-		<button>Log In</button>
-		<div class="social">
-			<div class="go">
-				<i class="fab fa-google"></i> Google
-			</div>
-			<div class="fb">
-				<i class="fab fa-facebook"></i> Facebook
-			</div>
-		</div>
-	</form>
+		<button>가입</button>
+	</form>	
 </body>
 </html>
