@@ -5,11 +5,27 @@
 <head>
 <meta charset="UTF-8">
 <title>LoginForm</title>
+<style type="text/css">
+@import url("css/sidebar.css");
+
+   body {
+      background: gray;
+   }
+</style>
 </head>
 <body>
+<p align="left" style="margin-left:300px;">
+   <img src="./images/m.png" id="m" alt="메뉴줄이기" width="30" height="30">
+</p>
+   <p align="right" id="upp">
+      <img alt="logo" src="./images/procutcut.png" height="35px" width="35px">&nbsp;&nbsp;GUEST&nbsp;&nbsp;
+      <button onclick="location.href='Login.jsp'">로그인</button>&nbsp;&nbsp;
+      
+   </p>
+
 	<h2 align="center">로그인</h2>
-<form action="Loginpro.jsp" method="post"> 
-	<table align="center" border="1" style="width: 500;">
+<form action="LoginPro.jsp" method="post"> 
+	<table align="center" border="3" style="width: 500;">
 		<tr height="40">
 			<td>아이디(ID)</td>
 			<td>
@@ -30,5 +46,16 @@
 		</tr>
 	</table>
 </form>
+
+
+<% 
+
+%>
+
+   <jsp:include page="menu.jsp"></jsp:include>
+
+   <footer>
+      <jsp:include page="footer.jsp"></jsp:include>
+   </footer>
 </body>
 </html>

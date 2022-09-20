@@ -62,7 +62,10 @@ $(document).ready(function(){
 </p>
    <p align="right" id="upp">
       <img alt="logo" src="./images/procutcut.png" height="35px" width="35px">&nbsp;&nbsp;GUEST&nbsp;&nbsp;
+      <button onclick="location.href='Login.jsp'">로그인</button>&nbsp;&nbsp;
+      
    </p>
+   
 
    <div class="wrap">
         <div class="box1"><img src="./images/다크나이트.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
