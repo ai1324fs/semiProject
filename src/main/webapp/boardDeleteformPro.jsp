@@ -20,7 +20,7 @@
 	
 	String passwd = bdao.getPass(b_no);
 
-	if(pass.equals(bBean.getPassword())){
+	if(passwd.equals(bBean.getPassword())){
 		bdao.deleteBoard(b_no);
 		
 		response.sendRedirect("boardList.jsp");

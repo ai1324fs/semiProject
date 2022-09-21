@@ -9,7 +9,7 @@
 <title>main.jsp</title>
 <script>
 $(document).ready(function(){
-			var a = true;
+			var a = true;9
 		$('#m').click(function(){
 			if(a){
 			$('.header').hide();
