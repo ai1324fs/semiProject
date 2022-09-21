@@ -10,6 +10,7 @@ import semiProject.PeopleBean;
 
 public class peopleDAO {
 	static String id;
+	static String pw;
 	static Connection conn = null;
 	PreparedStatement pstmt = null;
 	static ResultSet rs = null;
@@ -87,6 +88,29 @@ public String getPassword(String id){
 		return password;		
 	}
 	
+
+public boolean loginRegister(String id, String pw){
+	
+	String password = null;
+	boolean loginCon = false;
+	try {
+		getconnection();			
+		
+		String sql = "select conut(*) from people where id = ? and pw = ?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, id);
+		pstmt.setString(2, pw);
+		rs = pstmt.executeQuery();
+		
+		if(rs.next()&&rs.getInt(1)>0) {
+			loginCon = true;
+		}
+	}
+	catch(Exception e) {
+		System.out.println("Exception : "+e);
+	}
+	return loginCon;
+}
 	
 	
 }

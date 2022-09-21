@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+	<%
+	String id = (String)session.getAttribute("id");
+	if(id != null){
+	%>
+	
+	<script language="JavaScript">
+	alert("로그인 되었습니다");
+	location.href = "sessionLoginPro.jsp";
+	</script>
+<%} else{ %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -169,3 +178,4 @@ button {
 	</form>
 </body>
 </html>
+<%}%>

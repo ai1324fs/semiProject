@@ -11,7 +11,7 @@
 $(document).ready(function(){
 			var a = true;
 		$('#m').click(function(){
-			if(a){
+			if(a){s
 			$('.header').hide();
 			a = false;
 			}else{
