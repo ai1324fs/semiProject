@@ -34,15 +34,19 @@
 
 		<nav>
 			<div align="right">
-				<a href="sessionLogin.jsp"> <img alt="logo"
+				<a href="sessionLogin.jsp" for="login"> <img alt="logo"
 					src="./images/procutcut.png" height="35px" width="35px"
-					style="align: -1px"></a>&nbsp;&nbsp; <span
-					style="vertical-align: center">로 그 인</span>&nbsp;&nbsp; <a
+					style="align: -1px" ></a>&nbsp;&nbsp; <span
+					style="vertical-align: center" id="login">로 그 인</span>&nbsp;&nbsp;<a
 					href="join.jsp"> <img alt="logo" src="./images/procutcut.png"
 					height="35px" width="35px"></a>&nbsp;&nbsp;<span>회원가입</span>&nbsp;&nbsp;
 			</div>
 		</nav>
 	</header>
+
+	<% if(id.equals("admin")){ %>
+	<a href="member_list.jsp">관리자모드 접속(회원 목록 보기)</a>
+		<% } %>
 
 </body>
 </html>

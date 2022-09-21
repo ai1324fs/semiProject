@@ -187,31 +187,32 @@ button {
 		<label for="genre">선호 장르 </label>
 		<table align="center">
 			<tr>
+
 				<td>
-					<input type="checkbox" value="comic" name="genre" class="genre"/><span style="vertical-align:+3px">  코믹</span>&nbsp;&nbsp;
+					<label class="btn"><input type="checkbox" value="comic" name="genre" class="genre"/><span style="vertical-align:+3px">  코믹</span></label>&nbsp;&nbsp;
 				</td>
 				<td>
-					<input type="checkbox" value="melo" name="genre" class="genre"/><span style="vertical-align:+3px">  멜로</span>&nbsp;&nbsp;
+					<label class="btn"><input type="checkbox" value="melo" name="genre" class="genre"/><span style="vertical-align:+3px">  멜로</span></label>&nbsp;&nbsp;
 				</td>
 				<td>
-					<input type="checkbox" value="action" name="genre" class="genre"/><span style="vertical-align:+3px">  액션</span>&nbsp;&nbsp;
+					<label class="btn"><input type="checkbox" value="action" name="genre" class="genre"/><span style="vertical-align:+3px">  액션</span></label>&nbsp;&nbsp;
 				</td>
 				<td>
-					<input type="checkbox" value="horror" name="genre" class="genre"/><span style="vertical-align:+3px">  호러</span><br>
+					<label class="btn"><input type="checkbox" value="horror" name="genre" class="genre"/><span style="vertical-align:+3px">  호러</span></label><br>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="checkbox" value="thriller" name="genre" class="genre"/><span style="vertical-align:+3px">  스릴러</span>&nbsp;&nbsp;
+					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="thriller" name="genre" class="genre"/><span style="vertical-align:+3px">  스릴러</span></label>&nbsp;&nbsp;
 				</td>
 				<td>
-					<input type="checkbox" value="drama" name="genre" class="genre"/><span style="vertical-align:+3px">  드라마</span>&nbsp;&nbsp;
+					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="drama" name="genre" class="genre"/><span style="vertical-align:+3px">  드라마</span></label>&nbsp;&nbsp;
 				</td>
 				<td>
-					<input type="checkbox" value="sports" name="genre" class="genre"/><span style="vertical-align:+3px">  스포츠</span>&nbsp;&nbsp;
+					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="sports" name="genre" class="genre"/><span style="vertical-align:+3px">  스포츠</span></label>&nbsp;&nbsp;
 				</td>
 				<td>
-					<input type="checkbox" value="sf" name="genre" class="genre"/><span style="vertical-align:+3px">  SF</span>&nbsp;&nbsp;
+					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="sf" name="genre" class="genre"/><span style="vertical-align:+3px">  SF</span></label>&nbsp;&nbsp;
 				</td>
 			</tr>
 		</table>
