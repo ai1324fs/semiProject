@@ -176,7 +176,7 @@ button {
 			</tr>
 			<tr style="background:rgba(255, 255, 255, 0.07);radius: 3px;">
 				<td width="165" align="center">
-					<input type="radio" id="gender" name="gender" value="남자" style="width:15px; height:15px"/><span>남성</span>
+					<input type="radio" id="gender" name="gender" value="남자" style="width:15px; height:15px" id="M"/><span>남성</span>
    				</td>
    				<td width="165" align="center">
 			    	<input type="radio" id="gender" name="gender" value="여자" style="width:15px; height:15px"/><span>여성</span>
