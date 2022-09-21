@@ -11,7 +11,7 @@
 $(document).ready(function(){
 			var a = true;
 		$('#m').click(function(){
-			if(a){s
+			if(a){
 			$('.header').hide();
 			a = false;
 			}else{
@@ -57,17 +57,9 @@ $(document).ready(function(){
 </style>
 </head>
 <body>
-<p align="left" style="margin-left:300px;">
-	<img src="./images/menu_icon.png" id="m" alt="메뉴줄이기" width="30" height="30">
-</p>
-	<p align="right" id="upp">
-		<a href="sessionLogin.jsp">
-		<img alt="logo" src="./images/procutcut.png"  height="35px" width="35px"></a>&nbsp;&nbsp;로그인&nbsp;&nbsp;
-	</p>
-	<p align="right" id="upp">
-		<a href="join.jsp">
-		<img alt="logo" src="./images/procutcut.png"  height="35px" width="35px"></a>&nbsp;&nbsp;회원가입&nbsp;&nbsp;
-	</p>
+	<header>
+		<jsp:include page="header.jsp"></jsp:include>
+	</header>
 
 	<div class="wrap">
         <div class="box1"><img src="./images/다크나이트.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
@@ -87,8 +79,6 @@ $(document).ready(function(){
         <div class="box3"><img src="./images/블랙폰.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
         <div class="box4"><img src="./images/애프터.png" height="350px" width="280px"></div>
     </div>
-
-
 
 <% 
 

@@ -1,15 +1,12 @@
-package semiProject;
+package movie;
 
-public class PeopleBean {
-	
+public class peopleBean { 
 	private String id;
-	private String passwd;
+	private String pw1;
 	private String name;
 	private String gender;
-	private int age;
+	private String age;
 	private String genre;
-	
-	
 	
 	public String getId() {
 		return id;
@@ -17,11 +14,11 @@ public class PeopleBean {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPasswd() {
-		return passwd;
+	public String getPw1() {
+		return pw1;
 	}
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
+	public void setPw1(String pw1) {
+		this.pw1 = pw1;
 	}
 	public String getName() {
 		return name;
@@ -35,10 +32,10 @@ public class PeopleBean {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 	public String getGenre() {
@@ -47,7 +44,7 @@ public class PeopleBean {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-
+	
 	
 	
 }

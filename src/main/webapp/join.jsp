@@ -145,19 +145,14 @@ button {
 	margin-right: 4px;
 }
 
-input[type="checkbox"]{
-
-width: 15px; /*Desired width*/
-
-height: 15px; /*Desired height*/
-
-cursor: pointer;
-
+.genre{
+	display:inline-block;
+	width:20px;
+	height:20px;
 }
-label{ display:inline-block; width:100px; line-height:50px; }
-*{margin:0;padding:0;font-size:12px;font-family:'돋움',dotum}
-label{vertical-align:-1px}
-.comic{width:13px;height:13px;vertical-align:text-top}
+#checkbox{
+	vertical-align: -3px;
+}
 
 </style>
 </head>
@@ -166,25 +161,52 @@ label{vertical-align:-1px}
 		<div class="shape"></div>
 		<div class="shape"></div>
 	</div>
-	<form height="1200px">
+	<form height="1200px" action="joinPro.jsp" method="post">
 		<h3>Join us!</h3>
 
-		<label for="username">아이디</label> <input type="text" placeholder="id" name="id"> 
-		<label for="password">비밀번호</label> <input type="password" placeholder="Password" name="pw">
+		<label for="username">아이디</label> <input type="text" placeholder="id" name="id">
+		<label for="password">비밀번호</label> <input type="password" placeholder="Password" name="pw1">
+		<label for="password">비밀번호 확인</label> <input type="password" placeholder="Confirm Password!" name="pw2">
 		<label for="name">이름</label> <input type="text" name="name">
-		<label for="gender">성별</label> <input type="text" name="gender">
+		<div>
+		<label for="genderpick1">남성</label>
+		<input type="radio" id="gender" name="gender" value="F" style="width:15px; height:15px"/>
+   		<label for="genderpick2">여성</label>	
+    	<input type="radio" id="gender" name="gender" value="M" style="width:15px; height:15px"/>
+    	</div>	
 		<label for="age">나이</label> <input type="text" name="age">
-		<label for="genre">선호 장르</label> 
-		<div> <!-- style="border: 1px solid white; padding: 5px" -->
-	    <label style="display:inline-block;width:100px; line-height:50px;" for="comic"><input type="checkbox" id="comic" name="comic" value="comic">코믹</label>    
-	    <label style="display:inline-block;width:100px; line-height:50px;" for="mellow"><input type="checkbox" id="mellow" name="mellow" value="mellow">멜로</label> 
-	    <label style="display:inline-block;width:100px; line-height:50px;" for="action"><input type="checkbox" id="action" name="action" value="">액션</label><br>
-		<label style="display:inline-block;width:100px; line-height:50px;" for="a"><input type="checkbox" id="a" name="a" value="comic">코믹</label>    
-	    <label style="display:inline-block;width:100px; line-height:50px;" for="b"><input type="checkbox" id="b" name="b" value="mellow">멜로</label> 
-	    <label style="display:inline-block;width:100px; line-height:50px;" for="c"><input type="checkbox" id="c" name="c" value="">액션</label>
-
-	    </div>
-		<button>가입</button>
+		<label for="genre">선호 장르 </label>
+		<table align="center">
+			<tr>
+				<td>
+					<input type="checkbox" value="comic" name="genre" class="genre"/><span style="vertical-align:+3px">  코믹</span>&nbsp;&nbsp;
+				</td>
+				<td>
+					<input type="checkbox" value="melo" name="genre" class="genre"/><span style="vertical-align:+3px">  멜로</span>&nbsp;&nbsp;
+				</td>
+				<td>
+					<input type="checkbox" value="action" name="genre" class="genre"/><span style="vertical-align:+3px">  액션</span>&nbsp;&nbsp;
+				</td>
+				<td>
+					<input type="checkbox" value="horror" name="genre" class="genre"/><span style="vertical-align:+3px">  호러</span><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" value="thriller" name="genre" class="genre"/><span style="vertical-align:+3px">  스릴러</span>&nbsp;&nbsp;
+				</td>
+				<td>
+					<input type="checkbox" value="drama" name="genre" class="genre"/><span style="vertical-align:+3px">  드라마</span>&nbsp;&nbsp;
+				</td>
+				<td>
+					<input type="checkbox" value="sports" name="genre" class="genre"/><span style="vertical-align:+3px">  스포츠</span>&nbsp;&nbsp;
+				</td>
+				<td>
+					<input type="checkbox" value="sf" name="genre" class="genre"/><span style="vertical-align:+3px">  SF</span>&nbsp;&nbsp;
+				</td>
+			</tr>
+		</table>
+		<button type="submit">가입</button>
 	</form>	
 </body>
 </html>
