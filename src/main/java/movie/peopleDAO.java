@@ -5,8 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import movie.peopleDAO;
+import java.util.Vector;
 
 public class peopleDAO {
 
@@ -39,7 +38,7 @@ public class peopleDAO {
 		return conn;		
 	}
 	
-	//session로그인
+	//로그인
 	public int userCheck(String id, String pw)throws Exception {
 		String dbpw="";
 		int x=-1;
@@ -95,7 +94,7 @@ System.out.println("아이디가없음");
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, pBean.getId());
-			pstmt.setString(2, pBean.getPw1());
+			pstmt.setString(2, pBean.getPw());
 			pstmt.setString(3, pBean.getName());
 			pstmt.setString(4, pBean.getGender());
 			pstmt.setString(5, pBean.getAge());
@@ -106,5 +105,140 @@ System.out.println("아이디가없음");
 			e.printStackTrace();
 		}
 	}
-}
 	
+	//모든 회원 정보를 반환해주는 메소드 호출
+      public Vector<peopleBean> allselectmember() throws SQLException{
+		
+		Vector<peopleBean> v = new Vector<peopleBean>();
+		
+		String sql = "select * from people";
+		try {
+			
+				getConnection();
+				
+			pstmt = conn.prepareStatement(sql);
+				
+			rs = pstmt.executeQuery();
+		
+		while(rs.next()) {
+			peopleBean pBean = new peopleBean();
+			
+			pBean.setId(rs.getString(1));
+			pBean.setPw(rs.getString(2));
+			pBean.setName(rs.getString(3));
+			pBean.setGender(rs.getString(4));
+			pBean.setAge(rs.getString(5));
+			pBean.setGenre(rs.getString(6));
+			
+			v.add(pBean);
+			
+		}		
+		conn.close();
+	}catch (SQLException e) {
+		e.printStackTrace();
+	}
+		return v;
+	}
+		
+	//해당 id에 내용을 반환해 주는 메소드 호출
+	public peopleBean oneselectmember(String id){
+		
+	    peopleBean pBean = new peopleBean();
+				
+		try {
+				getConnection();
+				
+			String sql = "select * from people where id = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+		
+			while(rs.next()) {
+					
+				pBean.setId(rs.getString(1));
+				pBean.setPw(rs.getString(2));
+				pBean.setName(rs.getString(3));
+				pBean.setGender(rs.getString(4));
+				pBean.setAge(rs.getString(5));
+				pBean.setGenre(rs.getString(6));
+						
+		}		
+		conn.close();
+	}catch (SQLException e) {
+		e.printStackTrace();
+	}
+		return pBean;
+	}
+	
+	//id에 해당하는 비밀번호를 찾아서 반환하는 메소드 호출 	
+	public String getPassword(String id){		
+		String password = null;		
+		
+		try {
+			getConnection();			
+			
+			String sql = "select pw from people where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				password = rs.getString(1);
+			}
+			if(conn != null) {
+				conn.close();
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return password;		
+	}
+	// 정보 수정 
+	public void updatepeople(peopleBean pBean){
+		
+		try {
+			getConnection();
+			
+			String sql = "update people set pw=?, genre=? where id=?";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, pBean.getPw());
+			pstmt.setString(2, pBean.getGenre());
+			pstmt.setString(3, pBean.getId());
+			
+			pstmt.executeUpdate();
+			
+			if(conn != null) {
+				conn.commit();
+				conn.close();
+			}			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	//delete people table
+		// 정보 삭제
+public void deletepeople(String id){
+		
+		try {
+			getConnection();
+			
+			String sql = "delete from people where id=?";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, id);			
+			pstmt.executeUpdate();
+			
+			if(conn != null) {
+				conn.commit();
+				conn.close();
+			}			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

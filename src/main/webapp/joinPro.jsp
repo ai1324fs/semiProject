@@ -10,6 +10,7 @@
 <title>회원 가입 처리 구현</title>
 </head>
 <body>
+<!-- 예외처리로 아이디중복 처리 경고창 만들기 -->
 <%
 	request.setCharacterEncoding("UTF-8");
 

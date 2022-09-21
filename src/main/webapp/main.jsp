@@ -9,7 +9,7 @@
 <title>main.jsp</title>
 <script>
 $(document).ready(function(){
-			var a = true;9
+			var a = true;
 		$('#m').click(function(){
 			if(a){
 			$('.header').hide();
@@ -54,34 +54,30 @@ $(document).ready(function(){
     img {
     	border-radius: 7px;
     }
+    #center{
+    	position: absolute;
+    	top: 70%;
+    	left: 70%;
+    	
+    }
 </style>
 </head>
 <body>
+<%
+	String center = request.getParameter("center");
+
+	if(center == null){
+		center = "body.jsp";
+	}
+%>
 	<header>
 		<jsp:include page="header.jsp"></jsp:include>
 	</header>
-
-	<div class="wrap">
-        <div class="box1"><img src="./images/다크나이트.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
-        <div class="box2"><img src="./images/더 문.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
-        <div class="box3"><img src="./images/블랙폰.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
-        <div class="box4"><img src="./images/애프터.png" height="350px" width="280px"></div>
-    </div>
-	<div class="wrap">
-        <div class="box1"><img src="./images/다크나이트.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
-        <div class="box2"><img src="./images/더 문.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
-        <div class="box3"><img src="./images/블랙폰.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
-        <div class="box4"><img src="./images/애프터.png" height="350px" width="280px"></div>
-    </div>
-	<div class="wrap">
-        <div class="box1"><img src="./images/다크나이트.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
-        <div class="box2"><img src="./images/더 문.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
-        <div class="box3"><img src="./images/블랙폰.png" height="350px" width="280px"></div>&nbsp;&nbsp;&nbsp;
-        <div class="box4"><img src="./images/애프터.png" height="350px" width="280px"></div>
-    </div>
-
-
-
+		<section>
+		  <article>
+			<jsp:include page="<%=center %>"/>
+		  </article>
+		</section>
 <% 
 
 %>

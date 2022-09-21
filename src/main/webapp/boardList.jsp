@@ -43,7 +43,6 @@
 		<td width="120">작성자</td>
 		<td width="120">작성일자</td>
 		<td width="100">조회수</td>
-		<td width="120">글내용</td>
 	</tr>
 
 	<%
@@ -54,7 +53,7 @@
 	<tr height="40" align="center">
 		<td><%=number--%></td>
 		<td>
-			<a href="boardDetail.jsp?b_no=<%=bBean.getb_no() %>" style="text-decoration:none">
+			<a href="boardDetail.jsp?b_no=<%=bBean.getb_no()%>" style="text-decoration:none">
 			<%
 			//들여쓰기
 			if(bBean.getRe_step() > 1){
@@ -68,15 +67,14 @@
 		<td><%=bBean.getWriter() %></td>
 		<td><%=bBean.getReg_date() %></td>
 		<td><%=bBean.getReadCount() %></td>
-		<td><%=bBean.getContent() %></td>
 	</tr>
 	<%} %>	
 </table>
 	<table align="center">
 		<tr>
 			<td>
-				<input type="button" value="글쓰기" onclick="location.href='boardwriteform.jsp'"/>&nbsp;&nbsp;				
-				<input type="button" value="회원목록보기" onclick="location.href='memberList.jsp'"/>&nbsp;&nbsp;				
+				<input type="button" value="글쓰기" onclick="location.href='boardwrite.jsp'"/>&nbsp;&nbsp;				
+				<input type="button" value="회원목록보기" onclick="location.href='peopleList.jsp'"/>&nbsp;&nbsp;				
 				<button onclick="location.href='main.jsp'">main</button>
 			</td>	
 		</tr>

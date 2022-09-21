@@ -54,7 +54,7 @@ body {
 }
 
 form {
-	height: 980px;
+	height: 1100px;
 	width: 400px;
 	background-color: rgba(255, 255, 255, 0.13);
 	position: absolute;
@@ -93,6 +93,28 @@ label {
 input {
 	display: block;
 	height: 50px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.07);
+	border-radius: 3px;
+	padding: 0 10px;
+	margin-top: 8px;
+	font-size: 14px;
+	font-weight: 300;
+}
+#tr {
+	display: block;
+	height: 50px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.07);
+	border-radius: 3px;
+	padding: 0 10px;
+	margin-top: 8px;
+	font-size: 14px;
+	font-weight: 300;
+}
+#table {
+	display: block;
+	height: 110px;
 	width: 100%;
 	background-color: rgba(255, 255, 255, 0.07);
 	border-radius: 3px;
@@ -165,8 +187,8 @@ button {
 		<h3>Join us!</h3>
 
 		<label for="username">아이디</label> <input type="text" placeholder="id" name="id">
-		<label for="password">비밀번호</label> <input type="password" placeholder="Password" name="pw1">
-		<label for="password">비밀번호 확인</label> <input type="password" placeholder="Confirm Password!" name="pw2">
+		<label for="password">비밀번호</label> <input type="password" placeholder="Password" name="pw">
+		<label for="password">비밀번호 확인</label> <input type="password" placeholder="Confirm Password!" name="pw1">
 		<label for="name">이름</label> <input type="text" name="name">
 		<table>
 			<tr>
@@ -174,9 +196,9 @@ button {
 					<label>성별</label>
 				</td>
 			</tr>
-			<tr style="background:rgba(255, 255, 255, 0.07);radius: 3px;">
+			<tr id=tr>
 				<td width="165" align="center">
-					<input type="radio" id="gender" name="gender" value="남자" style="width:15px; height:15px" id="M"/><span>남성</span>
+					<input type="radio" id="gender" name="gender" value="남자" style="width:15px; height:15px"/><span>남성</span>
    				</td>
    				<td width="165" align="center">
 			    	<input type="radio" id="gender" name="gender" value="여자" style="width:15px; height:15px"/><span>여성</span>
@@ -185,20 +207,19 @@ button {
     	</table>	
 		<label for="age">나이</label> <input type="text" name="age">
 		<label for="genre">선호 장르 </label>
-		<table align="center">
+		<table align="center" id=table>
 			<tr>
-
 				<td>
-					<label class="btn"><input type="checkbox" value="comic" name="genre" class="genre"/><span style="vertical-align:+3px">  코믹</span></label>&nbsp;&nbsp;
+					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="comic" name="genre" class="genre"/><span style="vertical-align:+3px">  코믹</span></label>&nbsp;&nbsp;
 				</td>
 				<td>
-					<label class="btn"><input type="checkbox" value="melo" name="genre" class="genre"/><span style="vertical-align:+3px">  멜로</span></label>&nbsp;&nbsp;
+					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="melo" name="genre" class="genre"/><span style="vertical-align:+3px">  멜로</span></label>&nbsp;&nbsp;
 				</td>
 				<td>
-					<label class="btn"><input type="checkbox" value="action" name="genre" class="genre"/><span style="vertical-align:+3px">  액션</span></label>&nbsp;&nbsp;
+					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="action" name="genre" class="genre"/><span style="vertical-align:+3px">  액션</span></label>&nbsp;&nbsp;
 				</td>
 				<td>
-					<label class="btn"><input type="checkbox" value="horror" name="genre" class="genre"/><span style="vertical-align:+3px">  호러</span></label><br>
+					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="horror" name="genre" class="genre"/><span style="vertical-align:+3px">  호러</span></label><br>
 				</td>
 			</tr>
 			<tr>
@@ -213,6 +234,11 @@ button {
 				</td>
 				<td>
 					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="sf" name="genre" class="genre"/><span style="vertical-align:+3px">  SF</span></label>&nbsp;&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" align="center">
+					<input type="checkbox" value="ALL" checked name="genre" class="genre"/><span style="vertical-align:+3px">  모든장르</span>&nbsp;&nbsp;
 				</td>
 			</tr>
 		</table>
