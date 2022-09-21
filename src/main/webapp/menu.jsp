@@ -20,7 +20,7 @@
 					<li><a href="#">추천</a></li>
 					<li><a href="#">장르별</a></li>
 					<li><a href="#">찜목록</a></li>
-					<li><a href="#">고객센터</a></li>
+					<li><a href="boardList.jsp">고객센터</a></li>
 				</ul>
 			</nav>
 			<div class="overlay"></div>

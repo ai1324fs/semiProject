@@ -32,7 +32,7 @@
 				</tr>
 				<tr style="height: 50px;">
 					<td colspan="4">
-						<input type="hidden" name="num" value="<%=bBean.getb_no() %>">
+						<input type="hidden" name="b_no" value="<%=bBean.getb_no() %>">
 						<input type="submit"value="삭제완료">&nbsp;&nbsp;
 						<input type="reset" value="삭제취소">&nbsp;&nbsp;
 						<input type="button" onclick="location.href='boardList.jsp'"value="글목록보기">&nbsp;&nbsp; 
