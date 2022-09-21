@@ -168,12 +168,21 @@ button {
 		<label for="password">비밀번호</label> <input type="password" placeholder="Password" name="pw1">
 		<label for="password">비밀번호 확인</label> <input type="password" placeholder="Confirm Password!" name="pw2">
 		<label for="name">이름</label> <input type="text" name="name">
-		<div>
-		<label for="genderpick1">남성</label>
-		<input type="radio" id="gender" name="gender" value="F" style="width:15px; height:15px"/>
-   		<label for="genderpick2">여성</label>	
-    	<input type="radio" id="gender" name="gender" value="M" style="width:15px; height:15px"/>
-    	</div>	
+		<table>
+			<tr>
+				<td>
+					<label>성별</label>
+				</td>
+			</tr>
+			<tr style="background:rgba(255, 255, 255, 0.07);radius: 3px;">
+				<td width="165" align="center">
+					<input type="radio" id="gender" name="gender" value="남자" style="width:15px; height:15px"/><span>남성</span>
+   				</td>
+   				<td width="165" align="center">
+			    	<input type="radio" id="gender" name="gender" value="여자" style="width:15px; height:15px"/><span>여성</span>
+    			</td>
+    		</tr>
+    	</table>	
 		<label for="age">나이</label> <input type="text" name="age">
 		<label for="genre">선호 장르 </label>
 		<table align="center">

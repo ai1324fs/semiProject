@@ -80,6 +80,8 @@ $(document).ready(function(){
         <div class="box4"><img src="./images/애프터.png" height="350px" width="280px"></div>
     </div>
 
+
+
 <% 
 
 %>
