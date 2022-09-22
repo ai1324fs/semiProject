@@ -31,7 +31,7 @@ a, a:hover {
 	<h2 align="center">게시글 삭제</h2>
 	<div align="center">
 		<form action="boardDeletePro.jsp" method="post">
-			<table  class="table table-hover" border="1" style="width: 800px; text-align: center;">
+			<table  class="table table-delete" border="1" style="width: 800px; text-align: center;">
 				<tr style="height: 50px;">
 					<td width="100">번호</td>
 					<td><%=bBean.getb_no()%></td>

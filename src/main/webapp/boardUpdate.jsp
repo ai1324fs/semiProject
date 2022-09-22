@@ -30,18 +30,22 @@ a, a:hover {
 	<h2 align="center">게시판 수정 화면</h2>
 	<div align="center">
 		<form action="boardUpdatePro.jsp" method="post">
-			<table border="1" style="width: 800px; text-align: center;" class="table table-hover">
+			<table border="1" style="width: 800px; text-align: center;" class="table table-striped">
 				<tr style="height: 50px">
 					<td width="100">번호</td>
-					<td><%=bBean.getb_no() %></td>
+					<td class="form-control"><%=bBean.getb_no() %></td>
+				</tr>
+				<tr>
 					<td width="100">작성자</td>
-					<td><%=bBean.getWriter() %></td>
+					<td class="form-control"><%=bBean.getWriter() %></td>
 				</tr>
 				<tr style="height: 50px">
 					<td width="120">비밀번호</td>
-					<td><input type="password" name="password" size="30"></td>
+					<td class="form-control"><input type="password" name="password" size="30"></td>
+				</tr>
+				<tr>
 					<td width="100">내용</td>
-					<td colspan="3"><textarea rows="10" cols="90" name="content"><%=bBean.getContent() %></textarea></td>
+					<td class="form-control" colspan="3"><textarea rows="10" cols="90" name="content"><%=bBean.getContent() %></textarea></td>
 				</tr>
 				<tr style="height: 50px;">
 					<td colspan="4">

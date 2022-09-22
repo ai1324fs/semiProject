@@ -28,20 +28,22 @@ a, a:hover {
 %>
 <div align="center">
 	<form action="boardRewritePro.jsp" method="post"> 
-		<table border="1" style="width: 800px; text-align: center;" class="table table-hover">
+		<table border="1" style="width: 800px; text-align: center;" class="table table-striped">
 			<tr style="height: 50px">
 				<td width="100">작성자</td>
-				<td><input type="text" name="writer" size="60"></td>				
-				<td width="120">제목</td>
-				<td><input type="text" name="subject" value=[Reply]:></td>			
+				<td class="form-control"><input type="text" name="writer" size="90"></td>					
 			</tr>	
+			<tr>
+				<td width="120">제목</td>
+				<td class="form-control"><input type="text" name="subject" size="90" value=[Reply]:></td>		
+			</tr>
 			<tr style="height: 50px">
 				<td width="120">비밀번호</td>
-				<td><input type="password" name="password"></td>			
+				<td class="form-control"><input type="password" name="password" size="90"></td>			
 			</tr>
 			<tr style="height: 50px">
 				<td width="100">내용</td>
-				<td colspan="3">
+				<td colspan="3" class="form-control">
 					<textarea rows="10" cols="90" name="content"></textarea></td>						
 			</tr>
 			<tr style="height: 50px;">

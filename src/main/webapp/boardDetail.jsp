@@ -20,7 +20,7 @@ a, a:hover {
 	<script src="jquery-1.12.0.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </head>
-<body>
+<body style="margin-top: 100px;">
 <%
 	int b_no = Integer.parseInt(request.getParameter("b_no"));
 
@@ -30,26 +30,26 @@ a, a:hover {
 
 <h2 align="center">게시글 상세 보기</h2>
 <div align="center">
-	<table class="table table-hover" border="1" style="text-align: center; width: 100%;">
+	<table class="table table-striped" border="1" style="text-align: center; width: 70%;">
 		<tr align="center" style="height: 40;">
 			<td width="100">번호</td>
-			<td><%=bBean.getb_no() %></td>
+			<td class="form-control"><%=bBean.getb_no() %></td>
 			<td width="200">조회수</td>
-			<td><%=bBean.getReadCount() %></td>
+			<td class="form-control"><%=bBean.getReadCount() %></td>
 		</tr>
 		<tr align="center" style="height: 40;">
 			<td width="100">작성자</td>
-			<td><%=bBean.getWriter() %></td>
+			<td class="form-control"><%=bBean.getWriter() %></td>
+						<td width="100">작성일자</td>
+			<td class="form-control"><%=bBean.getReg_date() %></td>
 		</tr>		
-		<tr align="center" style="height: 40;">
-			<td width="100">작성일자</td>
-			<td><%=bBean.getReg_date() %></td>
-			<td width="200">제목</td>
-			<td><%=bBean.getSubject() %></td>
+		<tr>
+			<td >제목</td>
+			<td colspan="3" class="form-control" colspan="4" ><%=bBean.getSubject() %></td>
 		</tr>
 		<tr align="center" style="height: 40;">
-			<td width="80">내용</td>
-			<td colspan="3"><%=bBean.getContent() %></td>
+			<td>내용</td>
+			<td colspan="3" class="form-control"><%=bBean.getContent() %></td>
 		</tr>
 		
 		<tr style="height: 40; ">

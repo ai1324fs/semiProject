@@ -52,7 +52,7 @@ a, a:hover {
 	number = count - (currentPage - 1) * pageSize;//테이블에 표시할 번호 설정, 139 - (1 - 1) * 10 = 139
 %>
 	<h2 align="center">문의사항 게시판</h2>
-	<table class="table table-hover" border="1" align="center" >
+	<table class="table table-hover" border="1" align="center" style="width: 80%; float-right">
 	<tr align="center" style="height: 40;">
 		<td width="30">번호</td>
 		<td width="250">제목</td>
@@ -97,6 +97,7 @@ a, a:hover {
 		</tr>
 	</table> -->   
 	<!-- 글쓰기 버튼 -->
+
 <c:if test="${id eq null}">
 	<button onclick="location.href='main.jsp?center=boardwrite.jsp'" class="btn btn-light" style ="float:right" >글쓰기</button>
 </c:if>
@@ -150,6 +151,7 @@ if(endPage < pagecount) {
 	<%
 		}
 	}
+	System.out.println("로그인 여부 :" + id);
 	%>
 	</p>	
 </body>
