@@ -21,7 +21,7 @@ a, a:hover {
 <body style="margin-top: 100px;">
 	<h2 align="center">글쓰기</h2>
 <form action="boardwritePro.jsp" method="post">
-	<table class="table table-striped" border="1" align="center" width="60%">
+	<table class="table table-striped" border="1" align="center" style="width:60%" >
 		<tr height="40" align="center">
 			<td width="200">작성자</td>
 			<td width="600"><input type="text" class="form-control" name="writer" size="77" placeholder="홍길동"/></td>

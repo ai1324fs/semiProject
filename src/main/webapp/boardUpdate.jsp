@@ -30,7 +30,7 @@ a, a:hover {
 	<h2 align="center">게시판 수정 화면</h2>
 	<div align="center">
 		<form action="boardUpdatePro.jsp" method="post">
-			<table border="1" style="width: 800px; text-align: center;" class="table table-striped">
+			<table border="1" style="width:50%;; text-align: center;" class="table table-striped">
 				<tr style="height: 50px">
 					<td width="100">번호</td>
 					<td class="form-control"><%=bBean.getb_no() %></td>
