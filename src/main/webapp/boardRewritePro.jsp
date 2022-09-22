@@ -18,7 +18,7 @@
 	boardDAO bdao = new boardDAO();
 	bdao.rewriteBoard(bBean);
 	
-	response.sendRedirect("boardList.jsp");
+	response.sendRedirect("main.jsp?center=boardList.jsp");
 	
 %>
 

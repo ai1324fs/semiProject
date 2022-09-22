@@ -3,13 +3,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <meta charset="UTF-8">
-<title>게시판 글 쓰기 화면</title>
+<title>글쓰기</title>
+
+<style type="text/css">
+@import url("css/bootstrap.css");
+
+a, a:hover {
+		color:#000000;
+		text-decoration:none;}
+
+</style>
+	<script src="jquery-1.12.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 </head>
-<body>
-	<h2 align="center">게시판 글 쓰기 화면</h2>
+<body style="margin-top: 100px;">
+	<h2 align="center">글쓰기</h2>
 <form action="boardwritePro.jsp" method="post">
-	<table border="1" align="center" width="800" bgcolor="yellow">
+	<table border="1" align="center" width="800" class="table table-hover">
 		<tr height="40" align="center">
 			<td width="200">작성자</td>
 			<td width="600"><input type="text" name="writer" size="77" placeholder="홍길동"/></td>
@@ -30,9 +42,9 @@
 		</tr>		
 		<tr height="40" align="center">
 			<td colspan="2"> 				
-				<input type="submit" value="글쓰기"/>&nbsp;&nbsp;
-				<input type="reset" value="취소"/>&nbsp;&nbsp;
-				<input type="button" value="글목록보기" onclick="location.href='boardList.jsp'"/>&nbsp;&nbsp;
+				<input type="submit" value="글쓰기" class="btn btn-light"/>&nbsp;&nbsp;
+				<input type="reset" value="취소" class="btn btn-light"/>&nbsp;&nbsp;
+				<input type="button" value="글목록보기" onclick="location.href='main.jsp?center=boardList.jsp'" class="btn btn-light"/>&nbsp;&nbsp;
 		</tr>
 	</table>
 </form>	

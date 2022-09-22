@@ -22,7 +22,7 @@
 	if(pass.equals(bBean.getPassword())){
 		bdao.updateBoard(bBean);
 		
-		response.sendRedirect("boardList.jsp");
+		response.sendRedirect("main.jsp?center=boardList.jsp");
 	}else{
 %>	
 	<script type="text/javascript">

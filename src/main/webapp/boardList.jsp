@@ -8,20 +8,19 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
-	a, a:hover {
-		color:#000000;
-		text-decoration:none;}
-	table {
-	
-	width:100%;
-	 margin-top:600;
-	 }
-</style>
 <meta charset="UTF-8">
 <title>게시판</title>
-<!-- 부트스트랩 사용 -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+
+<style type="text/css">
+@import url("css/bootstrap.css");
+
+a, a:hover {
+		color:#000000;
+		text-decoration:none;}
+
+</style>
+	<script src="jquery-1.12.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 </head>
 <body style="margin-top: 100px;">
 <% String id = (String)session.getAttribute("id"); %>
@@ -70,7 +69,7 @@
 	<tr height="40" align="center">
 		<td><%=number--%></td>
 		<td>
-			<a href="boardDetail.jsp?b_no=<%=bBean.getb_no()%>" style="text-decoration:none">
+			<a href="main.jsp?center=boardDetail.jsp?b_no=<%=bBean.getb_no()%>" style="text-decoration:none">
 			<%
 			//들여쓰기
 			if(bBean.getRe_step() > 1){
@@ -99,7 +98,7 @@
 	</table> -->   
 	<!-- 글쓰기 버튼 -->
 <c:if test="${id eq null}">
-	<button onclick="location.href='boardwrite.jsp'" class="btn btn-light" style ="float:right" >글쓰기</button>
+	<button onclick="location.href='main.jsp?center=boardwrite.jsp'" class="btn btn-light" style ="float:right" >글쓰기</button>
 </c:if>
 	<button onclick="location.href='main.jsp'" class="btn btn-light float-right" style ="float:right">main</button>
 	<p align="center">
@@ -153,7 +152,5 @@ if(endPage < pagecount) {
 	}
 	%>
 	</p>	
-<script src="jquery-1.12.0.min.js"></script>
-<script src="js/bootstrap.js"></script>
 </body>
 </html>
