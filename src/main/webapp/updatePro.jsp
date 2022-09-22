@@ -17,7 +17,6 @@
 	</jsp:useBean>
 
 <%
-	request.setCharacterEncoding("UTF-8");
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");
 	
@@ -26,12 +25,8 @@
 	
 	if(pass.equals(password)){
 		pdao.updatepeople(pBean);
-		%>
-		<script type="text/javascript">
-		<input type="button" value="메인페이지로가기" onclick="location.href='main.jsp?center=join.jsp?'"/>
-		</script>
-		<%
-		response.sendRedirect("main.jsp?center=peopleList.jsp");
+		
+		response.getWriter().print("<script>alert('정보수정에 성공했습니다.'); location.href = 'main.jsp?center=peopleList.jsp';</script>");
 	}else{
 %>
 	<script type="text/javascript">

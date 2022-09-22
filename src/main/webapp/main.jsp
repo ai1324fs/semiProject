@@ -7,21 +7,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>main.jsp</title>
-<script>
-$(document).ready(function(){
-			var a = true;
-		$('#m').click(function(){
-			if(a){
-			$('.header').hide();
-			a = false;
-			}else{
-			$('.header').show();
-			a = true;
-			}
-		});
 
-});
-</script>
 <style type="text/css">
 @import url("css/menu.css");
 
@@ -58,8 +44,13 @@ $(document).ready(function(){
     	position: absolute;
     	top: 70%;
     	left: 70%;
-    	
     }
+aside{
+    float:left;
+    }
+/* * {
+cursor : url(./images/popcorn.cur), auto;
+} */
 </style>
 </head>
 <body>
@@ -73,15 +64,11 @@ $(document).ready(function(){
 	<header>
 		<jsp:include page="header.jsp"></jsp:include>
 	</header>
-		<section>
-		  <article>
-			<jsp:include page="<%=center %>"/>
-		  </article>
-		</section>
-<% 
+	<aside>
+	<jsp:include page="menu_Form.jsp"></jsp:include>
+	</aside>
 
-%>
-	<jsp:include page="menu.jsp"></jsp:include>
+			<jsp:include page="<%=center %>"/>
 
 	<footer>
 		<jsp:include page="footer.jsp"></jsp:include>

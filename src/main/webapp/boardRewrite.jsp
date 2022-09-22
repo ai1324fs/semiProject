@@ -28,7 +28,7 @@ a, a:hover {
 %>
 <div align="center">
 	<form action="boardRewritePro.jsp" method="post"> 
-		<table border="1" style="width:50%; text-align: center;" class="table table-striped">
+		<table border="1" style="width: 800px; text-align: center;" class="table table-striped">
 			<tr style="height: 50px">
 				<td width="100">작성자</td>
 				<td class="form-control"><input type="text" name="writer" size="90"></td>					

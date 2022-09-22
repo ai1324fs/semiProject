@@ -25,12 +25,12 @@
 			session.setAttribute("id", id); //"객체",벨류값
 			session.setMaxInactiveInterval(60*60*24*365); //20분간 쿠키 정보 유지 60초가 20번
 			
+			response.sendRedirect("main.jsp");//쿠키jsp로 가라
 			%>
 			<script>
 			alert("로그인에 성공하였습니다");
 			</script>
 			<%
-			response.sendRedirect("main.jsp");//쿠키jsp로 가라
 		}else if(check==0){
 			%>
 		<script>

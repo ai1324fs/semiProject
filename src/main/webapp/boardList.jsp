@@ -22,7 +22,7 @@ a, a:hover {
 	<script src="jquery-1.12.0.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </head>
-<body style="margin-top: 100px;">
+<body style="margin-top: 100px; width: 85%; float:right;">
 <% String id = (String)session.getAttribute("id"); %>
 
 
@@ -52,7 +52,7 @@ a, a:hover {
 	number = count - (currentPage - 1) * pageSize;//테이블에 표시할 번호 설정, 139 - (1 - 1) * 10 = 139
 %>
 	<h2 align="center">문의사항 게시판</h2>
-	<table class="table table-hover" border="1" align="center" style="width: 80%; float-right">
+	<table class="table table-hover" border="1" align="center" >
 	<tr align="center" style="height: 40;">
 		<td width="30">번호</td>
 		<td width="250">제목</td>
@@ -129,7 +129,7 @@ a, a:hover {
 			
 			if(startPage > 10){
 	%>	
-		<a href="boardList.jsp?pageNum=<%=startPage - 10 %>">[previous]</a>
+		<a href="main.jsp?center=boardList.jsp?pageNum=<%=startPage - 10 %>">[previous]</a>
 	<%
 		}
 			for(int i = startPage; i <= endPage; i++){
@@ -138,7 +138,7 @@ a, a:hover {
 		<div class="row">
 		<div class="col">
 		<ul class="pagination">
-			<li class="page-item"><a class="page-link" href="boardList.jsp?pageNum=<%=i %>">[<%=i %>]</a></li>
+			<li class="page-item"><a class="page-link" href="main.jsp?center=boardList.jsp?pageNum=<%=i %>">[<%=i %>]</a></li>
 		</ul>
 		</div>
 		</div>
@@ -147,7 +147,7 @@ a, a:hover {
 //[다음]링크를 만드는 부분
 if(endPage < pagecount) {
 %>		
-		<a href="boardList.jsp?pageNum=<%=startPage + 10 %>">[next]</a>
+		<a href="main.jsp?center=boardList.jsp?pageNum=<%=startPage + 10 %>">[next]</a>
 	<%
 		}
 	}
