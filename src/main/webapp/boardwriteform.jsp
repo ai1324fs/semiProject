@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="movie.boardDAO"%>
+<%@ page import="movie.boardBean"%>
+<%@ page import="movie.peopleDAO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +10,14 @@
 <title>게시판 글 쓰기 화면</title>
 </head>
 <body>
+<!-- 로그인된 사용자가 아니라면 로그인창으로 돌려줌 -->
+<%
+if (session == null || !request.isRequestedSessionIdValid()) {
+    System.out.println("세션이 무효화 상태입니다.");
+}
+%>
+
+
 	<h2 align="center">게시판 글 쓰기 화면</h2>
 <form action="boardwriteformPro.jsp" method="post">
 	<table border="1" align="center" width="800" bgcolor="yellow">

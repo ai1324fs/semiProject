@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>joinForm</title>
+<title>join</title>
 
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="stylesheet"
@@ -15,167 +15,7 @@
 	rel="stylesheet">
 <!--Stylesheet-->
 <style media="screen">
-*, *:before, *:after {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-
-body {
-	background-color: #080710;
-}
-
-.background {
-	width: 430px;
-	height: 520px;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	left: 50%;
-	top: 50%;
-}
-
-.background .shape {
-	height: 200px;
-	width: 200px;
-	position: absolute;
-	border-radius: 50%;
-}
-
-.shape:first-child {
-	background: linear-gradient(#1845ad, #23a2f6);
-	left: -80px;
-	top: -80px;
-}
-
-.shape:last-child {
-	background: linear-gradient(to right, #ff512f, #f09819);
-	right: -30px;
-	bottom: -80px;
-}
-
-form {
-	height: 1100px;
-	width: 400px;
-	background-color: rgba(255, 255, 255, 0.13);
-	position: absolute;
-	transform: translate(-50%, -50%);
-	top: 50%;
-	left: 50%;
-	border-radius: 10px;
-	backdrop-filter: blur(10px);
-	border: 2px solid rgba(255, 255, 255, 0.1);
-	box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-	padding: 50px 35px;
-}
-
-form * {
-	font-family: 'Poppins', sans-serif;
-	color: #ffffff;
-	letter-spacing: 0.5px;
-	outline: none;
-	border: none;
-}
-
-form h3 {
-	font-size: 32px;
-	font-weight: 500;
-	line-height: 42px;
-	text-align: center;
-}
-
-label {
-	display: block;
-	margin-top: 30px;
-	font-size: 16px;
-	font-weight: 500;
-}
-
-input {
-	display: block;
-	height: 50px;
-	width: 100%;
-	background-color: rgba(255, 255, 255, 0.07);
-	border-radius: 3px;
-	padding: 0 10px;
-	margin-top: 8px;
-	font-size: 14px;
-	font-weight: 300;
-}
-#tr {
-	display: block;
-	height: 50px;
-	width: 100%;
-	background-color: rgba(255, 255, 255, 0.07);
-	border-radius: 3px;
-	padding: 0 10px;
-	margin-top: 8px;
-	font-size: 14px;
-	font-weight: 300;
-}
-#table {
-	display: block;
-	height: 110px;
-	width: 100%;
-	background-color: rgba(255, 255, 255, 0.07);
-	border-radius: 3px;
-	padding: 0 10px;
-	margin-top: 8px;
-	font-size: 14px;
-	font-weight: 300;
-}
-
-::placeholder {
-	color: #e5e5e5;
-}
-
-button {
-	margin-top: 50px;
-	width: 100%;
-	background-color: #ffffff;
-	color: #080710;
-	padding: 15px 0;
-	font-size: 18px;
-	font-weight: 600;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-.social {
-	margin-top: 30px;
-	display: flex;
-}
-
-.social div {
-	background: red;
-	width: 150px;
-	border-radius: 3px;
-	padding: 5px 10px 10px 5px;
-	background-color: rgba(255, 255, 255, 0.27);
-	color: #eaf0fb;
-	text-align: center;
-}
-
-.social div:hover {
-	background-color: rgba(255, 255, 255, 0.47);
-}
-
-.social .fb {
-	margin-left: 25px;
-}
-
-.social i {
-	margin-right: 4px;
-}
-
-.genre{
-	display:inline-block;
-	width:20px;
-	height:20px;
-}
-#checkbox{
-	vertical-align: -3px;
-}
-
+@import url("css/join.css");
 </style>
 </head>
 <body>
@@ -210,30 +50,30 @@ button {
 		<table align="center" id=table>
 			<tr>
 				<td>
-					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="comic" name="genre" class="genre"/><span style="vertical-align:+3px">  코믹</span></label>&nbsp;&nbsp;
+					<input type="checkbox" value="코믹" name="genre" class="genre"/><span style="vertical-align:+3px">  코믹</span>&nbsp;&nbsp;
 				</td>
 				<td>
-					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="melo" name="genre" class="genre"/><span style="vertical-align:+3px">  멜로</span></label>&nbsp;&nbsp;
+					<input type="checkbox" value="멜로" name="genre" class="genre"/><span style="vertical-align:+3px">  멜로</span>&nbsp;&nbsp;
 				</td>
 				<td>
-					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="action" name="genre" class="genre"/><span style="vertical-align:+3px">  액션</span></label>&nbsp;&nbsp;
+					<input type="checkbox" value="액션" name="genre" class="genre"/><span style="vertical-align:+3px">  액션</span>&nbsp;&nbsp;
 				</td>
 				<td>
-					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="horror" name="genre" class="genre"/><span style="vertical-align:+3px">  호러</span></label><br>
+					<input type="checkbox" value="호러" name="genre" class="genre"/><span style="vertical-align:+3px">  호러</span><br>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="thriller" name="genre" class="genre"/><span style="vertical-align:+3px">  스릴러</span></label>&nbsp;&nbsp;
+					<input type="checkbox" value="스릴러" name="genre" class="genre"/><span style="vertical-align:+3px">  스릴러</span>&nbsp;&nbsp;
 				</td>
 				<td>
-					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="drama" name="genre" class="genre"/><span style="vertical-align:+3px">  드라마</span></label>&nbsp;&nbsp;
+					<input type="checkbox" value="드라마" name="genre" class="genre"/><span style="vertical-align:+3px">  드라마</span>&nbsp;&nbsp;
 				</td>
 				<td>
-					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="sports" name="genre" class="genre"/><span style="vertical-align:+3px">  스포츠</span></label>&nbsp;&nbsp;
+					<input type="checkbox" value="스포츠" name="genre" class="genre"/><span style="vertical-align:+3px">  스포츠</span>&nbsp;&nbsp;
 				</td>
 				<td>
-					<label class="btn" style="margin-top: 0px;"><input type="checkbox" value="sf" name="genre" class="genre"/><span style="vertical-align:+3px">  SF</span></label>&nbsp;&nbsp;
+					<input type="checkbox" value="SF" name="genre" class="genre"/><span style="vertical-align:+3px">  SF</span>&nbsp;&nbsp;
 				</td>
 			</tr>
 			<tr>

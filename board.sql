@@ -36,3 +36,5 @@ create sequence board_num
 );
 
 drop table board;
+
+insert into board values(board_num.nextval, 'admin', '공지사항', '1234', sysdate, 1, 1, 1, 0, '안녕하세요.');
