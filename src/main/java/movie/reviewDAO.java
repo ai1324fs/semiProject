@@ -6,9 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Vector;
 
-import oracle.net.aso.s;
-
-public class boardDAO {
+public class reviewDAO {
 
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -32,35 +30,18 @@ public class boardDAO {
 	}
 
 	// 데이터를 저장하는 메소드 호출
-	public void insertBoard(boardBean bBean) {
+	public void insertreview(reviewBean reBean) {
 
 		getConnection();
 
 		try {
-			int ref = 0;// 글 그룹에서 가장 큰 값을 적습니다.
-			int re_step = 1;
-			int re_level = 1;
 
-			String refsql = "select max(ref) from board";
-			pstmt = conn.prepareStatement(refsql);
-
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				ref = rs.getInt(1) + 1;// 최대값에 +1을 더하여 글 그룹을 설정합니다.
-			}
-
-			String sql = "insert into board values"
-					+ "(board_num.nextval, ?, ?, ?, sysdate, ?, ?, ?, 0, ?)";
+			String sql = "insert into review values (?, ?)";
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, bBean.getWriter());
-			pstmt.setString(2, bBean.getSubject());
-			pstmt.setString(3, bBean.getPassword());
-			pstmt.setInt(4, ref);
-			pstmt.setInt(5, re_step);
-			pstmt.setInt(6, re_level);
-			pstmt.setString(7, bBean.getContent());
+			/* pstmt.setInt(1, reBean.getReno()); */
+			pstmt.setInt(1, reBean.getGrade());
+			pstmt.setString(2, reBean.getWriting());
 
 			pstmt.executeUpdate();
 
@@ -74,7 +55,7 @@ public class boardDAO {
 
 	}
 
-	//게시판 전체보기
+	//
 	public Vector<boardBean> allselectBoard() {
 
 		getConnection();
@@ -381,3 +362,4 @@ public class boardDAO {
 		
 		//
 }
+

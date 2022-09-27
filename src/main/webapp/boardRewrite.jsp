@@ -10,15 +10,18 @@
 <style type="text/css">
 @import url("css/bootstrap.css");
 
-a, a:hover {
+.body{
 		color:#000000;
+}
+a, a:hover {
+		color:inherit;
 		text-decoration:none;}
 
 </style>
 	<script src="jquery-1.12.0.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </head>
-<body style="margin-top: 100px;">
+<body class="body">
 	<h2 align="center">댓글 쓰기</h2>
 <%
 	int b_no = Integer.parseInt(request.getParameter("b_no"));
@@ -41,9 +44,9 @@ a, a:hover {
 				<td width="120">비밀번호</td>
 				<td class="form-control"><input type="password" name="password" size="90"></td>			
 			</tr>
-			<tr style="height: 50px">
+			<tr style="height: 280px">
 				<td width="100">내용</td>
-				<td colspan="3" class="form-control">
+				<td colspan="3" class="form-control" style="height: 270px">
 					<textarea rows="10" cols="90" name="content"></textarea></td>						
 			</tr>
 			<tr style="height: 50px;">

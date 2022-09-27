@@ -15,19 +15,13 @@
 	rel="stylesheet">
 <!--Stylesheet-->
 <style media="screen">
-
-.mainJoinForm {
-	margin-top: 120px;
-}
-
-
 *, *:before, *:after {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 }
 
-body {
+body.movieJoin {
 	background-color: #080710;
 }
 
@@ -58,14 +52,14 @@ body {
 	right: -30px;
 	bottom: -80px;
 }
-
+/* form에 대한 css */
 form {
-	height: 1100px;
+	/* height: 1100px; */
 	width: 400px;
 	background-color: rgba(255, 255, 255, 0.13);
 	position: absolute;
 	transform: translate(-50%, -50%);
-	top: 50%;
+	top: 105%;
 	left: 50%;
 	border-radius: 10px;
 	backdrop-filter: blur(10px);
@@ -107,6 +101,17 @@ input {
 	font-size: 14px;
 	font-weight: 300;
 }
+textarea {
+	display: block;
+	/* height: 50px; */
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.07);
+	border-radius: 3px;
+	padding: 0 10px;
+	margin-top: 8px;
+	font-size: 14px;
+	font-weight: 300;
+}
 #tr {
 	display: block;
 	height: 50px;
@@ -120,7 +125,7 @@ input {
 }
 #table {
 	display: block;
-	height: 110px;
+	height: 80px;
 	width: 100%;
 	background-color: rgba(255, 255, 255, 0.07);
 	border-radius: 3px;
@@ -183,48 +188,18 @@ button {
 }
 
 </style>
-
 </head>
-<body>
-<script>
-document.querySelector('.mainJoinForm').addEventListener('click', function(e){
-    //ID가 7글자 미만이면 메시지 표시
-    if(document.querySelector('.peopleID').value.length < 7){
-        rating.showMessage('글자가 너무 적습니다');
-        return false;
-        alert("아이디는 최소 5글자 이상 적어주세요")
-    }
-    //폼 서밋
-});
-</script>
+<body class=movieJoin>
 	<div class="background">
 		<div class="shape"></div>
 		<div class="shape"></div>
 	</div>
-	<form height="1200px" action="joinPro.jsp" method="post" class="mainJoinForm">
+	<form action="movieJoinPro.jsp" method="post">
 		<h3>Join us!</h3>
 
-		<label for="username">아이디</label> <input type="text" placeholder="id" name="id" minlength = "5"  class="peopleID">
-		<label for="password">비밀번호</label> <input type="password" placeholder="Password" name="pw">
-		<label for="password">비밀번호 확인</label> <input type="password" placeholder="Confirm Password!" name="pw1">
-		<label for="name">이름</label> <input type="text" name="name">
-		<table>
-			<tr>
-				<td>
-					<label>성별</label>
-				</td>
-			</tr>
-			<tr id=tr>
-				<td width="165" align="center">
-					<input type="radio" id="gender" name="gender" value="남자" style="width:15px; height:15px"/><span>남성</span>
-   				</td>
-   				<td width="165" align="center">
-			    	<input type="radio" id="gender" name="gender" value="여자" style="width:15px; height:15px"/><span>여성</span>
-    			</td>
-    		</tr>
-    	</table>	
-		<label for="age">나이</label> <input type="text" name="age">
-		<label for="genre">선호 장르 </label>
+		<label>CODE</label> <input type="text" placeholder="영화코드" name="mno">
+		<label>제목</label> <input type="text" placeholder="영화제목" name="title">
+		<label>장르</label>
 		<table align="center" id=table>
 			<tr>
 				<td>
@@ -254,13 +229,31 @@ document.querySelector('.mainJoinForm').addEventListener('click', function(e){
 					<input type="checkbox" value="SF" name="genre" class="genre"/><span style="vertical-align:+3px">  SF</span>&nbsp;&nbsp;
 				</td>
 			</tr>
+		</table>
+		<table>
 			<tr>
-				<td colspan="4" align="center">
-					<input type="checkbox" value="ALL" checked name="genre" class="genre"/><span style="vertical-align:+3px">  모든장르</span>&nbsp;&nbsp;
+				<td>
+					<label>국내/외</label>
 				</td>
 			</tr>
-		</table>
-		<button type="submit">가입</button>
+			<tr id=tr>
+				<td width="165" align="center">
+					<input type="radio" id="country" name="country" value="국내" style="width:15px; height:15px"/><span>국내</span>
+   				</td>
+   				<td width="165" align="center">
+			    	<input type="radio" id="country" name="country" value="국외" style="width:15px; height:15px"/><span>국외</span>
+    			</td>
+    		</tr>
+    	</table>
+		<label>런타임</label> <input type="text" placeholder="OO분" name="runtime">
+		<label>시청연령</label> <input type="text" name="age">
+		<label>개봉일</label> <input type="text" name="opendate">
+		<label>감독</label> <input type="text" name="director">
+		<label>출연진</label> <input type="text" name="actor">
+		<label>영화소개</label> <textarea rows="10" cols="90" name="story"></textarea>
+		<label>포스터</label> <input type="text" value="./images/movieDB/(이곳에 파일.확장자입력)" name="poster">
+		<label>평점</label> <input type="text" name="love">
+		<button type="submit">데이터 삽입</button>
 	</form>	
 </body>
 </html>
