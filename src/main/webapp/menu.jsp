@@ -10,7 +10,7 @@
 <title>menu.jsp</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body>`
      <nav id="sidebar" >
     <div class="sidebar-skeleton"></div>
       <div class="sidebar-header">

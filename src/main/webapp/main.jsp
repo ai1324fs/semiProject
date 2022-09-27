@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="C" %>
 <!DOCTYPE html>
 <html>
 <head>
 <link href="m.ico" rel="shortcut icon" type="image/x-icon">
-<script
-   src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>1'M MOVIE</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -24,15 +24,47 @@
   <link rel="stylesheet" href="css/mainPage.css">
   
   <title>1'M MOVIE</title>
+<script type="text/javascript">
 
+/*  $(document).ready(function (){
+	$(‘a’).click(function(event){
+	event.preventDefault();
+	
+	});	
+});  */
+
+function loginC() {
+	let id = "${id}";
+	if (id == "") {
+		alert("로그인 후 사용하실 수 있습니다.");
+		location.href="Login.jsp";
+		$('a').prop('href', 'Login.jsp');
+/* 		$('input').prop('href', 'Login.jsp');
+		$('button').prop('href', 'Login.jsp'); */
+		/* <meta http-equiv='refresh' content='0;url=Login.jsp'> */
+/* 		$(body).find("a").bind('click',function(e){
+		e.preventDefault ? e.preventDefault() : (e.returnValue=false);
+		}); */
+
+	};
+};
+
+</script>
 </head>
-<body class="body">
+<body onclick="loginC()" class="body" />
    <!-- session을 이용한 로그인 처리 -->
    <%
    String id = (String) session.getAttribute("id");
 
 
-      %>   
+      %>  
+
+
+	<%
+	System.out.println("로그인 여부 :" + id);
+	%>
+	
+
       <div class="wrapper" >
 	    <nav id="sidebar" style="color: white">
 	    <div className="sidebar-skeleton"></div>
@@ -61,8 +93,8 @@
 	          <a href="main.jsp?center=boardList.jsp">고객센터</a>
 	        </li>
 	        <li>
-	          <a href="movieJoin.jsp">영화추가</a>
-	          <a href="main.jsp?center=test.jsp">테스트</a>
+	          <a href="movieJoin.jsp" onclick="loginC()">영화추가</a>
+	          <a href="main.jsp?center=test.jsp" onclick="loginC()">테스트</a>
 	        </li>
 	      </ul>
 	    </nav>
@@ -71,11 +103,13 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <button type="button" id="sidebarCollapse" class="btn btn-dark">
-            <i class="fas fa-bars"></i><span> MENU</span>
+            <i class="fas fa-bars" onclick="loginC()"></i><span> MENU</span>
           </button>
         </div>
       </nav>
-      
+      <script>
+};
+      </script>
          <!-- 검색바 -->
          <div class="container">
 
@@ -143,7 +177,7 @@
 	      </div>
      
       
-      
+
       
       
 <script type="text/javascript"
@@ -164,6 +198,8 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
       });
     });
   </script>
+  
+
 <!--   <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -192,5 +228,6 @@ try {
   console.log(error);
 }
 </script> -->
+
 </body>
 </html>
