@@ -23,10 +23,7 @@ a, a:hover {
 	<%
 	request.setCharacterEncoding("UTF-8");
 	
-	//int id = Integer.parseInt(request.getParameter("id"));
-	
-	String rno1 = "3";//request.getParameter("id");
-	int rno = Integer.parseInt(rno1);
+	int rno = Integer.parseInt(request.getParameter("rno"));
 	
 	rewordDAO rdao = new rewordDAO();
 	rewordBean rBean = rdao.OneSelectreword(rno);

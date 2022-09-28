@@ -216,7 +216,7 @@ document.querySelector('.mainJoinForm').addEventListener('click', function(e){
 			</tr>
 			<tr id=tr>
 				<td width="165" align="center">
-					<input type="radio" id="gender" name="gender" value="남자" style="width:15px; height:15px"/><span>남성</span>
+					<input type="radio" id="gender" name="gender" value="남자" checked="checked" style="width:15px; height:15px"/><span>남성</span>
    				</td>
    				<td width="165" align="center">
 			    	<input type="radio" id="gender" name="gender" value="여자" style="width:15px; height:15px"/><span>여성</span>

@@ -19,7 +19,7 @@
 	rewordDAO rdao = new rewordDAO();
 	rdao.rewordupdate(rbean);
 	
-	//response.sendRedirect("main.jsp?center=movieDetail.jsp?mno=rbean.getMno() ");
+	response.sendRedirect("main.jsp?center=movieDetail.jsp?mno=rbean.getMno() ");
 %>		
 </body>
 </html>

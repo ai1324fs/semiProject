@@ -1,13 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="C" %>
 <!DOCTYPE html>
 <html>
 <head>
 <link href="m.ico" rel="shortcut icon" type="image/x-icon">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>1'M MOVIE</title>
+<script type="text/javascript">
+
+function loginC() {
+	let id = "${id}";
+	if (id == "") {
+		alert("로그인 후 사용하실 수 있습니다.");
+		location.href="Login.jsp";
+		$('a').prop('href', 'Login.jsp');
+	};
+};
+</script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
    
   <!-- Required meta tags -->
@@ -24,49 +35,50 @@
   <link rel="stylesheet" href="css/mainPage.css">
   
   <title>1'M MOVIE</title>
-<script type="text/javascript">
 
-/*  $(document).ready(function (){
-	$(‘a’).click(function(event){
-	event.preventDefault();
-	
-	});	
-});  */
 
-function loginC() {
-	let id = "${id}";
-	if (id == "") {
-		alert("로그인 후 사용하실 수 있습니다.");
-		location.href="Login.jsp";
-		$('a').prop('href', 'Login.jsp');
-/* 		$('input').prop('href', 'Login.jsp');
-		$('button').prop('href', 'Login.jsp'); */
-		/* <meta http-equiv='refresh' content='0;url=Login.jsp'> */
-/* 		$(body).find("a").bind('click',function(e){
-		e.preventDefault ? e.preventDefault() : (e.returnValue=false);
-		}); */
-
-	};
-};
-
-</script>
+<style>
+.dropbtn {
+ 
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+</style>
 </head>
-<body onclick="loginC()" class="body" />
+<body class="body">
    <!-- session을 이용한 로그인 처리 -->
    <%
    String id = (String) session.getAttribute("id");
 
 
-      %>  
-
-
-	<%
-	System.out.println("로그인 여부 :" + id);
-	%>
-	
-
+      %>   
       <div class="wrapper" >
-	    <nav id="sidebar" style="color: white">
+	    <nav id="sidebar" style="color: white;height:200vh;" onclick="loginC()">
 	    <div className="sidebar-skeleton"></div>
 	      <div class="sidebar-header">
 	      <a href="main.jsp"><img src="./images/mmovie2.png"  width="200" height="100vh"/></a><br>
@@ -93,8 +105,8 @@ function loginC() {
 	          <a href="main.jsp?center=boardList.jsp">고객센터</a>
 	        </li>
 	        <li>
-	          <a href="movieJoin.jsp" onclick="loginC()">영화추가</a>
-	          <a href="main.jsp?center=test.jsp" onclick="loginC()">테스트</a>
+	          <a href="movieJoin.jsp">영화추가</a>
+	          <a href="main.jsp?center=test.jsp">테스트</a>
 	        </li>
 	      </ul>
 	    </nav>
@@ -103,29 +115,34 @@ function loginC() {
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <button type="button" id="sidebarCollapse" class="btn btn-dark">
-            <i class="fas fa-bars" onclick="loginC()"></i><span> MENU</span>
+            <i class="fas fa-bars"></i><span> MENU</span>
           </button>
         </div>
       </nav>
-      <script>
-};
-      </script>
-         <!-- 검색바 -->
-         <div class="container">
+      
+          <!-- 검색바   2022.09.26 수정-->  
+   
+   
+         <div class="container" onclick="loginC()">
 
-                    <!-- <div class="row height d-flex justify-content-center align-items-center"> -->
+    <form action="searchPro.jsp" method="get" >
+                    <!--  <div class="row height d-flex justify-content-center align-items-center"> -->
 
                       <div class="col-md-8" >
 
                         <div class="search" >
                           <i class="fa fa-search"></i>
-                          <input type="text" class="form-control" placeholder="Have a question? Ask Now">
-                          <button class="btn btn-primary"style="border-color:rgb(51,51,51)">Search</button>
+             
+                         
+                          <input type="text" name="title" class="form-control"  placeholder="영화를 검색해보세요" style="color:gray;">
+                          <button type="submit" class="btn btn-primary" style="border-color:rgb(51,51,51)" onclick="location.href='main.jsp?center=searchPro.jsp'">Search</button>
+                       
                         </div>
                         
                       </div>
                       
-                    <!-- </div> -->
+                   <!--  </div> -->
+           </form>
                 </div>
 
       <nav>
@@ -150,21 +167,27 @@ function loginC() {
               </form>
          <%
          }else if(id != null){%>
-            <a href="Login.jsp"> <img alt="logo"
-               src="./images/procutcut.png" height="35px" width="35px"
-               style="align: -1px"></a>&nbsp;&nbsp; <span
-               style="vertical-align: center"><%=id %></span>&nbsp;&nbsp; 
-              <form action="Logout.jsp" method="post">
-              <input type="submit" value="로그아웃">
-              </form>
-         
-         <%} %>
+         <a href="Login.jsp"></a>      	
+	           <div class="dropdown">
+		    	<button class="dropbtn">MY PAGE</button>
+				   	 <div class="dropdown-content">
+				     	    <a href="main.jsp?center=mypageDetail.jsp?id=<%=id%>">회원목록</a> 
+				     	    <a href="#"></a>
+				    	    <a href="#" onclick="return Logout_form()">로그아웃</a>
+				   	</div>
+			  	</div>
+					  	<form id="Logout" action="Logout.jsp" method="post" style = "display:none">
+						<input type="submit" value="로그아웃">
+						</form>
+	          	<span><%=id %></span>&nbsp;&nbsp; 
+							            
+			         <%} %>
 
          </div>
       </nav>
       </header>
-	    <div id="content">
-				<div class="wrap">
+	    <!-- <div id="content"> -->
+				<div class="wrap" onclick="loginC()">
 				<%
 					String center = request.getParameter("center");
 				
@@ -174,10 +197,10 @@ function loginC() {
 				%>
 				<jsp:include page="<%=center %>"/>
 				</div>
-	      </div>
+	      <!-- </div> -->
      
       
-
+      
       
       
 <script type="text/javascript"
@@ -197,10 +220,14 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
         $("#sidebar").toggleClass('active');
       });
     });
-  </script>
-  
+    
+    function Logout_form(){
+    	document.getElementById('Logout').submit();
 
-<!--   <script type="text/javascript">
+    }
+    
+  </script>
+<!-- <script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-36251023-1']);
@@ -228,6 +255,5 @@ try {
   console.log(error);
 }
 </script> -->
-
 </body>
 </html>

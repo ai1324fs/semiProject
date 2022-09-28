@@ -127,7 +127,6 @@
                style="vertical-align: center">로 그 인</span>&nbsp;&nbsp; <a
                href="join.jsp"> <img alt="logo" src="./images/procutcut.png"
                height="35px" width="35px"></a>&nbsp;&nbsp;<span>회원가입</span>&nbsp;&nbsp;
-               
 
          <%
          }else if(id.equals("admin")){

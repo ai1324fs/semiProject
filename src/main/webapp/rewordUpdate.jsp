@@ -24,10 +24,12 @@ a, a:hover {
 <%
 	request.setCharacterEncoding("UTF-8");
 
-	String Mno = "1";
-	String Title = "1";
-	String id1 = "1";//request.getParameter("id");
+	String id1 = (String) session.getAttribute("id");
 	int id = Integer.parseInt(id1);
+	
+	String mno = request.getParameter("mno");
+	String title = request.getParameter("title");
+	
 	
 	rewordDAO rdao = new rewordDAO();
 	rewordBean rBean = rdao.OneSelectreword(id);
