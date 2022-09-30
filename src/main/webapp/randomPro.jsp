@@ -49,29 +49,23 @@
 	
 </style>
 <body>
-
+<jsp:useBean id="mBean" class="movie.movieBean">
+		<jsp:setProperty name="mBean" property="*"/></jsp:useBean>
 
 <%
-   String Genre = request.getParameter("Genre");
 
-	movieDAO mdao = new movieDAO();
+   request.setCharacterEncoding("UTF-8");
+   String genre = request.getParameter("genre");
 
-	Vector<movieBean> vec = mdao.RandomselectMovie(Genre);
+
+
 	
-	for(int j=0; j < vec.size(); j++){
 		
-		movieBean mBean = vec.get(j);
+		
 %>
-	   <span class="box2">제목: <%=mBean.getTitle()%><br>
-	    				장르: <%=mBean.getGenre()%><br>
-	    				국내외: <%=mBean.getCountry()%><br>
-	    				런타임: <%=mBean.getRuntime() %></span>
-	    				
-        <img class="box1" src="<%=mBean.getPoster() %>">
-        
-<%}
-	
-	%>
+	     <script>
+   location.href='main.jsp?center=randomShow.jsp?genre=<%=genre%>'   				
+	   </script>
 
 </body>
 </html>

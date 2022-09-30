@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="movie.rewordDAO"%>
 <%@ page import="movie.rewordBean"%>
-<%	request.setCharacterEncoding("UTF-8");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,18 +11,21 @@
 <body>
 <% request.setCharacterEncoding("UTF-8"); %>
 
-		<jsp:useBean id="rBean" class="movie.rewordBean">
-			<jsp:setProperty name="rBean" property="*"/>
-		</jsp:useBean>
 <%
-	
-	int rno = Integer.parseInt(request.getParameter("rno"));
+	String id = (String) session.getAttribute("id");
+	String mno = request.getParameter("mno");
+	String title = request.getParameter("title");
 
 	rewordDAO rdao = new rewordDAO();
-	rdao.reworddelete(rno);
+	rdao.reworddelete(id, title);
 	
-	//response.sendRedirect("main.jsp?center=movieDetail.jsp?mno=rBean.getMno() ");
+	 //response.sendRedirect("main.jsp?center=movieDetail.jsp?mno=" +request.getParameter("mno")); 
+	response.getWriter().print("<script>alert('댓글삭제성공'); location.href ='main.jsp</script>");
+%>	  
+		<%-- <script>
+   			location.href='main.jsp?center=movieDetail.jsp?mno=<%=mno%>'   				
+	   </script> --%>
 	
-%>
+
 </body>
 </html>

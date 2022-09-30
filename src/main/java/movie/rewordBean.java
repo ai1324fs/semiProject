@@ -1,12 +1,22 @@
 package movie;
 
 public class rewordBean {
-	private int rno;
 	private String mno;
+	private String id;
 	private String title;
 	private double grade;
 	private String writing;
 	private double grade_avg;
+	private String tableid;
+
+	
+	public String getTableid() {
+		return tableid;
+	}
+
+	public void setTableid(String tableid) {
+		this.tableid = tableid;
+	}
 
 	public double getGrade_avg() {
 		return grade_avg;
@@ -16,20 +26,20 @@ public class rewordBean {
 		this.grade_avg = grade_avg;
 	}
 
-	public int getRno() {
-		return rno;
-	}
-
-	public void setRno(int rno) {
-		this.rno = rno;
-	}
-
 	public String getMno() {
 		return mno;
 	}
 
 	public void setMno(String mno) {
 		this.mno = mno;
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getTitle() {

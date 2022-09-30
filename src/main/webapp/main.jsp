@@ -19,6 +19,7 @@ function loginC() {
 	};
 };
 </script>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
    
   <!-- Required meta tags -->
@@ -36,10 +37,12 @@ function loginC() {
   
   <title>1'M MOVIE</title>
 
-
 <style>
-.dropbtn {
- 
+.center{
+margin-left: 2%;
+margin-top: 7%;
+width:150vh;
+text-align:center;
 }
 .dropdown {
   position: relative;
@@ -49,9 +52,10 @@ function loginC() {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 130px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  right:4%;
 }
 .dropdown-content a {
   color: black;
@@ -66,53 +70,56 @@ function loginC() {
   display: block;
 }
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  /* background-color: #2b9e31; */
 }
 </style>
 </head>
-<body class="body">
+<body>
    <!-- session을 이용한 로그인 처리 -->
    <%
    String id = (String) session.getAttribute("id");
-
+   String center = request.getParameter("center");
 
       %>   
-      <div class="wrapper" >
-	    <nav id="sidebar" style="color: white;height:200vh;" onclick="loginC()">
-	    <div className="sidebar-skeleton"></div>
-	      <div class="sidebar-header">
-	      <a href="main.jsp"><img src="./images/mmovie2.png"  width="200" height="100vh"/></a><br>
-	      </div>
-	      <ul class="lisst-unstyled components">
-	        <li><a href="main.jsp?center=random.jsp">추천</a></li>
-	        <li class="active">
-	          <a href="#foodSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">장르별</a>
-	          <ul class="collapse lisst-unstyled" id="foodSubmenu">
-	            <li><a href="#">코믹</a></li>
-	            <li><a href="#">멜로</a></li>
-	            <li><a href="#">액션</a></li>
-	            <li><a href="#">호러</a></li>
-	            <li><a href="#">스릴러</a></li>
-	            <li><a href="#">드라마</a></li>
-	            <li><a href="#">스포츠</a></li>
-	            <li><a href="#">SF</a></li>
-	          </ul>
-	        </li>
-	        <li>
-	          <a href="#">찜목록</a>
-	        </li>
-	        <li>
-	          <a href="main.jsp?center=boardList.jsp">고객센터</a>
-	        </li>
-	        <li>
-	          <a href="movieJoin.jsp">영화추가</a>
-	          <a href="main.jsp?center=test.jsp">테스트</a>
-	        </li>
-	      </ul>
-	    </nav>
+ <!-- 서브메뉴   2022.09.28 수정-->   
+      
+      <div style="display:inline-flex;">
+       <nav id="sidebar" style="color: white" onclick="loginC()">
+       <div className="sidebar-skeleton"></div>
+       
+         <div class="sidebar-header">
+         <a href="main.jsp"><img src="./images/mmovie2.png"  width="200" height="100vh"/></a><br>
+         </div>
+         <ul class="lisst-unstyled components">
+           <li><a href="main.jsp?center=random.jsp">추천</a></li>
+           <li class="active" >
+             <a href="#foodSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">장르별</a>
+             <ul class="collapse lisst-unstyled" id="foodSubmenu" >
+               <li><a href="main.jsp?center=movieGenreDetail.jsp?genre=코미디">코미디</a></li>
+               <li><a href="main.jsp?center=movieGenreDetail.jsp?genre=멜로">멜로</a></li>
+               <li><a href="main.jsp?center=movieGenreDetail.jsp?genre=액션">액션</a></li>
+               <li><a href="main.jsp?center=movieGenreDetail.jsp?genre=호러">호러</a></li>
+               <li><a href="main.jsp?center=movieGenreDetail.jsp?genre=스릴러">스릴러</a></li>
+               <li><a href="main.jsp?center=movieGenreDetail.jsp?genre=드라마">드라마</a></li>
+               <li><a href="main.jsp?center=movieGenreDetail.jsp?genre=스포츠">스포츠</a></li>
+               <li><a href="main.jsp?center=movieGenreDetail.jsp?genre=SF">SF</a></li>
+               
+             </ul>
+           </li>
+           <li>
+             <a href="main.jsp?center=like.jsp">찜목록</a>
+           </li>
+           <li>
+             <a href="main.jsp?center=boardList.jsp">고객센터</a>
+           </li>
+           <li>
+             <a href="main.jsp?center=test.jsp">테스트</a>
+           </li>
+         </ul>
+       </nav>
     
    <header class="header">
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg" onclick="loginC()">
         <div class="container-fluid">
           <button type="button" id="sidebarCollapse" class="btn btn-dark">
             <i class="fas fa-bars"></i><span> MENU</span>
@@ -120,28 +127,27 @@ function loginC() {
         </div>
       </nav>
       
-          <!-- 검색바   2022.09.26 수정-->  
+          <!-- 검색바   2022.09.28 수정-->  
    
    
          <div class="container" onclick="loginC()">
-
-    <form action="searchPro.jsp" method="get" >
+	
+    <form  name="title" action="searchPro.jsp"   >
                     <!--  <div class="row height d-flex justify-content-center align-items-center"> -->
-
+			
                       <div class="col-md-8" >
 
                         <div class="search" >
                           <i class="fa fa-search"></i>
              
                          
-                          <input type="text" name="title" class="form-control"  placeholder="영화를 검색해보세요" style="color:gray;">
-                          <button type="submit" class="btn btn-primary" style="border-color:rgb(51,51,51)" onclick="location.href='main.jsp?center=searchPro.jsp'">Search</button>
+                          <input type="search" name="title" class="form-control"  placeholder="Have a question? Ask Now">
+                            <button type="submit" class="btn btn-primary" style="border-color:rgb(51,51,51)" value="title" >Search</button>
                        
                         </div>
                         
                       </div>
                       
-                   <!--  </div> -->
            </form>
                 </div>
 
@@ -161,15 +167,24 @@ function loginC() {
          <%
          }else if(id.equals("admin")){
             %>
-               <a href="main.jsp?center=peopleList.jsp">관리자모드 접속(회원 목록 보기)</a>
-               <form action="Logout.jsp" method="post">
-              <input type="submit" value="로그아웃">
-              </form>
+ 			<h4 style="color:#40c749;margin-right:15%;margin-top:5%;margin-bottom:1%;"><strong>관리자</strong></h4> 
+              <div class="dropdown">
+             <button class="btn btn-dark dropbtn" style="padding-bottom: 1%;"><i class="fas fa-bars"></i><span>페이지 관리</span></button>
+                   <div class="dropdown-content">
+                        <a href="main.jsp?center=peopleList.jsp">회원목록</a> 
+                        <a href="movieJoin.jsp">영화추가</a>
+                       <a href="#" onclick="return Logout_form()">로그아웃</a>
+                  </div>
+              </div>
+                    <form id="Logout" action="Logout.jsp" method="post" style = "display:none">
+                  <input type="submit" value="로그아웃">
+                  </form>
          <%
          }else if(id != null){%>
          <a href="Login.jsp"></a>      	
+	          	<h4 style="color:#40c749;margin-right:15%;margin-top:5%;"><strong><%=id %></strong></h4> 
 	           <div class="dropdown">
-		    	<button class="dropbtn">MY PAGE</button>
+		    	<button class="btn btn-dark dropbtn" style="padding-bottom: 1%;"><i class="fas fa-bars"></i><span>MY PAGE</span></button>
 				   	 <div class="dropdown-content">
 				     	    <a href="main.jsp?center=mypageDetail.jsp?id=<%=id%>">회원목록</a> 
 				     	    <a href="#"></a>
@@ -179,34 +194,32 @@ function loginC() {
 					  	<form id="Logout" action="Logout.jsp" method="post" style = "display:none">
 						<input type="submit" value="로그아웃">
 						</form>
-	          	<span><%=id %></span>&nbsp;&nbsp; 
 							            
 			         <%} %>
 
          </div>
       </nav>
       </header>
-	    <!-- <div id="content"> -->
-				<div class="wrap" onclick="loginC()">
+      
+      <section class="center">
 				<%
-					String center = request.getParameter("center");
+					
 				
 					if(center == null){
 						center = "body.jsp";
 					}
 				%>
 				<jsp:include page="<%=center %>"/>
+<!-- 	    <div id="content">
+ 				<div class="wrap" onclick="loginC()">
 				</div>
-	      <!-- </div> -->
+	      </div> -->
+     </section>
      
-      
-      
-      
-      
+     </div>
 <script type="text/javascript"
 src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-</div>
   <!-- wrapper and -->
 
 
@@ -226,34 +239,6 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
 
     }
     
-  </script>
-<!-- <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
 </script>
-<script>
-try {
-  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
-    return true;
-  }).catch(function(e) {
-    var carbonScript = document.createElement("script");
-    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
-    carbonScript.id = "_carbonads_js";
-    document.getElementById("carbon-block").appendChild(carbonScript);
-  });
-} catch (error) {
-  console.log(error);
-}
-</script> -->
 </body>
 </html>
