@@ -391,7 +391,13 @@ truncate table reword;
 alter table reword
 drop constraint fk_mno cascade;
 
+
+--테이블에 외래키 제약조건 삭제
+alter table movie
+drop constraint fk_mno cascade;
+
+--board 테이블의 내용 컬럼 크기 늘리기
+alter table board modify(content varchar2(4000));
+
 commit;
 
-
-alter table board modify(content varchar2(4000));
