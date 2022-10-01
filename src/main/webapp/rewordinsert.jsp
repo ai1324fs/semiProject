@@ -20,7 +20,7 @@
     display: none; /* 라디오박스 감춤 */
 }
 .rewordform label{
-    font-size: 30px; /* 별 크기 */
+    font-size: 60px; /* 별 크기 */
     color: transparent; /* 기존 별 컬러 제거 */
     text-shadow: 0 0 0 #f0f0f0; /* 새 이모지 색상 부여 */
 }
@@ -52,6 +52,10 @@
 	
 	movieDAO mdao = new movieDAO();	
 	movieBean mBean = mdao.oneselectMovie(mno);
+	
+	System.out.println("로그인 :" + id);
+	System.out.println("영화번호 :" + mno);
+	System.out.println("제목 :" + title);
 %>
 	<form action="rewordinsertPro.jsp" method="post" class="rewordform" id="myform">
                <div>
@@ -77,7 +81,7 @@
                   <div style="vertical-align: center;">
                      <textarea name="writing" placeholder="영화는 어떠셨나요?" rows="2" style="width:500px;"></textarea>
                      <button type="submit" class="btn btn-light" style="vertical-align: center;margin-bottom: 3%;padding:1%;">입력</button><br><br>
-                  </div>
+                  </div>	
                </div>
    </form>
 </body>

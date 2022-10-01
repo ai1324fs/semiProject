@@ -15,15 +15,29 @@
 
 <%
 	request.setCharacterEncoding("UTF-8");
-	String id = request.getParameter("id");
+	
 
+
+	String id = request.getParameter("id");
+	String mno = request.getParameter("mno");
+	String title = request.getParameter("title");
 	double grade = Integer.parseInt(request.getParameter("grade"));
+	String writing = request.getParameter("writing");
+
+	
+	
+	
 	
 	rewordDAO rdao = new rewordDAO();
-	rdao.rewordinsert(rBean);
+	rdao.rewordinsert(id,mno,title,grade,writing);
 	
 	
 	response.sendRedirect("main.jsp?center=movieDetail.jsp?mno="+request.getParameter("mno"));
+	System.out.println("로그인 :" + id);
+	System.out.println("영화번호 :" + mno);
+	System.out.println("영화제목 :" + title);
+	System.out.println("영화점수 :" + grade);
+	System.out.println("영화내용 :" + writing);
 %>	
 	
 

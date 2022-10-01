@@ -391,12 +391,12 @@ truncate table reword;
 alter table reword
 drop constraint fk_mno cascade;
 
---mno 삭제시 찜에서도 삭제
+
+
+--mno 외래키 선언, 삭제시 찜에서도 삭제
 alter table movieLike
 add constraint fk_mno foreign key (mno) references movie(mno)
 on delete Cascade; 
-
-
 
 --테이블에 외래키 제약조건 삭제
 alter table movie

@@ -84,7 +84,7 @@ String id = (String)session.getAttribute("id");
 %>
 
         <div style="width:310px;display:inline-block;margin:1%;">
-<a href="main.jsp?center=movieDetail.jsp?mno=<%=mBean.getMno()%>"><img class="poster"src="<%=mBean.getPoster() %>" width="300px" height="400px"></a>
+<a href="main.jsp?center=movieDetail.jsp?mno=<%=mBean.getMno()%>&title=<%=mBean.getTitle() %>"><img class="poster"src="<%=mBean.getPoster() %>" width="300px" height="400px"></a>
 </div>
 <%} %>
 </body>

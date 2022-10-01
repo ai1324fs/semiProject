@@ -157,7 +157,6 @@ table {
 									   <td colspan="3"><%=mBean1.getStory() %></td>
 									</tr>
 									</table>
-									<span><jsp:include page="rewordinsert.jsp"/></span>
 
 									<table  class="table table-striped" border="1" style="text-align: center;color:white; width: 100%;">
 									<tr>
@@ -190,10 +189,6 @@ table {
 									   			<button onclick="location.href='main.jsp?center=rewordUpdate.jsp?id=<%=id %>&mno=<%=mno %>&numnum=<%=rBean4.getNumnum() %>'" class="btn btn-light" style="align:right">수정하기</button>&nbsp;&nbsp;&nbsp;&nbsp;
 												<button onclick="location.href='main.jsp?center=rewordDelete.jsp?id=<%=id %>&mno=<%=mno %>&title=<%=mBean1.getTitle() %>&numnum=<%=rBean4.getNumnum() %>'" class="btn btn-light" style="align:right">삭제하기</button>&nbsp;&nbsp;&nbsp;&nbsp;
 												
-												<%  
-													response.sendRedirect("main.jsp?center=movieDetailX.jsp?mno=" + mno + "&id=" + id);
-													out.println("<script>location.href='main.jsp?center=movieDetailX.jsp?mno=" + mno + "&id=" + id + "'<script>");
-												%>
 									   <% 	} else if(id.equals("admin")){
 										%>  	<button onclick="location.href='main.jsp?center=rewordUpdate.jsp?id=<%=id %>&mno=<%=mno %>&numnum=<%=rBean4.getNumnum() %>'" class="btn btn-light" style="align:right">수정하기</button>&nbsp;&nbsp;&nbsp;&nbsp;
 												<button onclick="location.href='main.jsp?center=rewordDelete.jsp?id=<%=id %>&mno=<%=mno %>&title=<%=mBean1.getTitle() %>&numnum=<%=rBean4.getNumnum() %>'" class="btn btn-light" style="align:right">삭제하기</button>&nbsp;&nbsp;&nbsp;&nbsp;
