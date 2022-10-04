@@ -186,6 +186,8 @@ update reword set grade = 5, writing = '재미없다' where numnum = 10;
 select numnum from reword;
 SELECT MAX(numnum)+1 FROM reword;
 
+
+
 INSERT INTO reword (numnum, id, mno, title, grade, writing)
 SELECT (SELECT NVL(MAX(numnum),0)+1 FROM reword)
 , 'NNN'
@@ -199,6 +201,12 @@ SELECT (SELECT NVL(MAX(numnum),0)+1 FROM reword)
                      where id = 'fff'
                       and mno = '114330');   
                          
+                      
+                      
+                      
+                      
+                      
+                      
 INSERT INTO reword
 SELECT (SELECT NVL(MAX(numnum),0)+1 FROM reword)
     , 'fff'
