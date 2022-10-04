@@ -9,7 +9,7 @@
 @import url("css/bootstrap.css");
 
 a, a:hover {
-		color:#000000;
+		color:inherit;
 		text-decoration:none;}
 .block {
   display: block;
@@ -26,7 +26,7 @@ a, a:hover {
 
 <title>리뷰 삭제</title>
 </head>
-<body style="margin-top:100px">
+<body>
 <%
 	request.setCharacterEncoding("UTF-8");
 

@@ -19,7 +19,9 @@ a, a:hover {
 	<script src="js/bootstrap.js"></script>
 </head>
 <body>
-<% String id = (String)session.getAttribute("id"); %>
+<% 
+String id = (String)session.getAttribute("id"); 
+%>
 	<h2 align="center">글쓰기</h2>
 <form action="boardwritePro.jsp" method="post">
 	<table class="table table-striped" align="center" style="width:60%" >

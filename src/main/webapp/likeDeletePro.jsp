@@ -22,7 +22,11 @@
 	
 	System.out.println("로그인 여부 :" + id);
 	System.out.println("영화번호 :" + mno);
-
+%>
+<script>
+	alert("찜목록에서 삭제했습니다.");
+</script>
+<%
 //메인 이동
 	response.sendRedirect("main.jsp");
 %>

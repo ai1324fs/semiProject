@@ -69,7 +69,7 @@ public class rewordDAO {
 		try {
 			getConnection();
 			
-			String sql = "select id, grade, writing from reword  where mno = ?";
+			String sql = "select distinct id, grade, writing from reword  where mno = ?";
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mno);

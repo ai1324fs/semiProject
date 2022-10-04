@@ -21,7 +21,6 @@ a, a:hover {
 </head>
 <body>
 <%
-	String id = (String) session.getAttribute("id");
 	int b_no = Integer.parseInt(request.getParameter("b_no"));
 	
 	boardDAO bdao = new boardDAO();
@@ -63,7 +62,5 @@ a, a:hover {
 		</form>
 	</div>
 
-</body>
-</html>
 </body>
 </html>

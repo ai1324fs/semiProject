@@ -47,16 +47,14 @@
 	String mno = request.getParameter("mno");
 	String id = (String) session.getAttribute("id");
 	
+	   rewordDAO rdao = new rewordDAO();   
+	   rewordBean rBean = rdao.findnumnum(mno, id);
+	   
+	   int numnum = rBean.getNumnum();
+	
 	
 	movieDAO mdao = new movieDAO();	
 	movieBean mBean = mdao.oneselectMovie(mno);
-	
-	rewordDAO rdao = new rewordDAO();	
-	rewordBean rBean = rdao.findnumnum(mno, id);
-	
-	int numnum = rBean.getNumnum();
-	
-	
 %>
 	<h2 align="center">게시판 수정 화면</h2>
 	<div align="center">
@@ -81,7 +79,5 @@
 		</form>
 	</div>
 
-</body>
-</html>
 </body>
 </html>

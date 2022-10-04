@@ -28,7 +28,11 @@
 	
 	System.out.println("로그인 여부 :" + id);
 	System.out.println("영화번호 :" + mno);
-
+%>
+<script>
+	alert("찜하셨습니다.");
+</script>
+<%
 //메인 이동
 	response.sendRedirect("main.jsp");
 %>
